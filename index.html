@@ -59,9 +59,15 @@ body{
 }
 ::selection{ background:var(--accent-soft); }
 
-.wrap{ max-width:1280px; margin:0 auto; padding:20px 16px 60px; }
+.wrap{ max-width:1280px; margin:0 auto; padding:0 16px 60px; }
 
-header.top{ display:flex; flex-direction:column; gap:4px; margin-bottom:18px; }
+.sticky-header{
+  position:sticky; top:0; z-index:30; background:var(--bg);
+  padding:20px 0 14px; margin-bottom:16px; border-bottom:1px solid var(--border);
+  display:flex; flex-direction:column; gap:14px;
+}
+
+header.top{ display:flex; flex-direction:column; gap:4px; }
 header.top h1{
   font-family:var(--font-mono); font-size:22px; letter-spacing:-.02em; margin:0;
   display:flex; align-items:center; gap:10px;
@@ -73,7 +79,7 @@ header.top p{ margin:0; color:var(--muted); font-size:13px; }
 .toolbar{
   display:flex; flex-wrap:wrap; gap:10px; align-items:center;
   background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
-  padding:12px; margin-bottom:20px;
+  padding:12px;
 }
 .tb-group{ display:flex; align-items:center; gap:6px; }
 .tb-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-right:2px; }
@@ -84,7 +90,7 @@ header.top p{ margin:0; color:var(--muted); font-size:13px; }
 }
 .btn:hover{ border-color:var(--accent); }
 .btn.active{ background:var(--accent); color:var(--bg); border-color:var(--accent); font-weight:600; }
-.btn.icon{ padding:7px 10px; }
+.btn.icon{ padding:7px 10px; display:inline-flex; align-items:center; justify-content:center; }
 select, input[type=number]{
   font-family:var(--font-sans); font-size:13px; color:var(--text); background:var(--surface2);
   border:1px solid var(--border); border-radius:var(--radius-sm); padding:7px 10px; cursor:pointer;
@@ -95,11 +101,11 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 .swatch{
   width:22px; height:22px; border-radius:50%; border:2px solid var(--border); cursor:pointer; padding:0;
 }
+.swatch[data-theme="mono"]{ background:#ffffff; }
 .swatch[data-theme="terminal"]{ background:#39d353; }
 .swatch[data-theme="ocean"]{ background:#38bdf8; }
 .swatch[data-theme="sunset"]{ background:#fb923c; }
 .swatch[data-theme="sakura"]{ background:#ec4899; }
-.swatch[data-theme="mono"]{ background:#111111; }
 .swatch[data-theme="forest"]{ background:#c9a227; }
 .swatch.active{ border-color:var(--text); transform:scale(1.15); }
 
@@ -198,64 +204,70 @@ footer.hint a{ color:var(--accent); }
 }
 </style>
 </head>
-<body data-theme="terminal">
+<body data-theme="mono">
 <div class="wrap">
 
-  <header class="top">
-    <h1><span class="dot"></span>Планёр</h1>
-    <p>Годовой календарь: планы, отметки о выполнении и заметки на каждый день</p>
-  </header>
+  <div id="stickyHeader" class="sticky-header">
+    <header class="top">
+      <h1><span class="dot"></span>Планёр</h1>
+      <p>Годовой календарь: планы, отметки о выполнении и заметки на каждый день</p>
+    </header>
 
-  <div class="toolbar">
-    <div class="tb-group">
-      <button class="btn icon" id="prevYear">‹</button>
-      <input type="number" id="yearInput" />
-      <button class="btn icon" id="nextYear">›</button>
-    </div>
+    <div class="toolbar">
+      <div class="tb-group">
+        <button class="btn icon" id="prevYear">‹</button>
+        <input type="number" id="yearInput" />
+        <button class="btn icon" id="nextYear">›</button>
+      </div>
 
-    <div class="tb-group">
-      <span class="tb-label">Вид</span>
-      <button class="btn" data-view="grid" id="viewGrid">Сетка</button>
-      <button class="btn" data-view="list" id="viewList">Список</button>
-    </div>
+      <div class="tb-group">
+        <span class="tb-label">Вид</span>
+        <button class="btn" data-view="grid" id="viewGrid">Сетка</button>
+        <button class="btn" data-view="list" id="viewList">Список</button>
+      </div>
 
-    <div class="tb-group">
-      <span class="tb-label">Неделя с</span>
-      <button class="btn" data-week="mon" id="weekMon">Пн</button>
-      <button class="btn" data-week="sun" id="weekSun">Вс</button>
-    </div>
+      <div class="tb-group">
+        <span class="tb-label">Неделя с</span>
+        <button class="btn" data-week="mon" id="weekMon">Пн</button>
+        <button class="btn" data-week="sun" id="weekSun">Вс</button>
+      </div>
 
-    <div class="tb-group">
-      <span class="tb-label">Праздники</span>
-      <select id="holidaySelect">
-        <option value="none">Не показывать</option>
-        <option value="ru">Россия</option>
-        <option value="by">Беларусь</option>
-      </select>
-    </div>
+      <div class="tb-group">
+        <span class="tb-label">Праздники</span>
+        <select id="holidaySelect">
+          <option value="none">Не показывать</option>
+          <option value="ru">Россия</option>
+          <option value="by">Беларусь</option>
+        </select>
+      </div>
 
-    <div class="spacer"></div>
+      <div class="spacer"></div>
 
-    <div class="tb-group">
-      <span class="tb-label">Тема</span>
-      <div class="swatch-row" id="themeSwatches">
-        <button class="swatch" data-theme="terminal" title="Terminal"></button>
-        <button class="swatch" data-theme="ocean" title="Ocean"></button>
-        <button class="swatch" data-theme="sunset" title="Sunset"></button>
-        <button class="swatch" data-theme="sakura" title="Sakura"></button>
-        <button class="swatch" data-theme="mono" title="Mono"></button>
-        <button class="swatch" data-theme="forest" title="Forest"></button>
+      <div class="tb-group">
+        <span class="tb-label">Тема</span>
+        <div class="swatch-row" id="themeSwatches">
+          <button class="swatch" data-theme="mono" title="Mono (светлая)"></button>
+          <button class="swatch" data-theme="terminal" title="Terminal"></button>
+          <button class="swatch" data-theme="ocean" title="Ocean"></button>
+          <button class="swatch" data-theme="sunset" title="Sunset"></button>
+          <button class="swatch" data-theme="sakura" title="Sakura"></button>
+          <button class="swatch" data-theme="forest" title="Forest"></button>
+        </div>
+      </div>
+
+      <div class="tb-group">
+        <button class="btn icon" id="exportBtn" title="Экспорт данных">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
+        </button>
+        <button class="btn icon" id="importBtn" title="Импорт данных">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M4 19h16"/></svg>
+        </button>
+        <input type="file" id="importFile" accept="application/json" style="display:none">
       </div>
     </div>
 
-    <div class="tb-group">
-      <button class="btn icon" id="exportBtn" title="Экспорт данных">⭳</button>
-      <button class="btn icon" id="importBtn" title="Импорт данных">⭱</button>
-      <input type="file" id="importFile" accept="application/json" style="display:none">
-    </div>
+    <div id="transferNote" style="display:none; font-size:12px; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 12px;"></div>
   </div>
-
-  <div id="transferNote" style="display:none; font-size:12px; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 12px; margin-bottom:16px;"></div>
 
   <div id="calendarArea" class="grid-view"></div>
 
@@ -304,7 +316,7 @@ function loadState(){
   else if(memoryFallback){ raw = memoryFallback; }
   if(raw){ try{ return JSON.parse(raw); }catch(e){} }
   return {
-    theme:'terminal', weekStart:'mon', viewMode:'grid', holidayCountry:'none',
+    theme:'mono', weekStart:'mon', viewMode:'grid', holidayCountry:'none',
     year: new Date().getFullYear(), days:{}
   };
 }
@@ -327,7 +339,7 @@ const HOLIDAYS = {
     [5,9,'День Победы'],[6,12,'День России'],[11,4,'День народного единства']
   ],
   by: [
-    [1,1,'Новый год'],[1,7,'Рождество Христово (правосл.)'],[3,8,'Международный женский день'],
+    [1,1,'Новый год'],[1,2,'Новый год'],[1,7,'Рождество Христово (правосл.)'],[3,8,'Международный женский день'],
     [5,1,'Праздник труда'],[5,9,'День Победы'],[7,3,'День Независимости'],
     [11,7,'Октябрьская революция'],[12,25,'Рождество Христово (кат.)']
   ]
@@ -402,6 +414,7 @@ function levelClass(ratio, total){
 function buildMonthCard(year, month){
   const card = document.createElement('div');
   card.className='month-card';
+  card.dataset.month = month;
 
   const title = document.createElement('div');
   title.className='month-title';
@@ -503,12 +516,35 @@ function renderListView(){
       if(hname){ const hb=document.createElement('div'); hb.className='list-day-holiday-name'; hb.textContent=hname; row.appendChild(hb); }
       row.appendChild(progWrap); row.appendChild(meta);
       row.addEventListener('click', ()=>openModal(key));
+      row.dataset.key = key;
       area.appendChild(row);
     }
   }
 }
 
-function render(){
+function scrollToToday(){
+  const now = new Date();
+  if(state.year !== now.getFullYear()) return;
+  requestAnimationFrame(()=>{
+    const headerH = document.getElementById('stickyHeader').offsetHeight;
+    if(state.viewMode==='grid'){
+      const card = document.querySelector(`.month-card[data-month="${now.getMonth()}"]`);
+      if(card){
+        const top = card.getBoundingClientRect().top + window.scrollY - headerH - 16;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    } else {
+      const row = document.querySelector(`.list-day-row[data-key="${todayKey()}"]`);
+      if(row){
+        const top = row.getBoundingClientRect().top + window.scrollY - headerH - 40;
+        window.scrollTo({top, behavior:'smooth'});
+      }
+    }
+  });
+}
+
+function render(opts){
+  opts = opts || {};
   document.body.setAttribute('data-theme', state.theme);
   document.getElementById('yearInput').value = state.year;
   document.getElementById('holidaySelect').value = state.holidayCountry;
@@ -524,6 +560,7 @@ function render(){
 
   if(state.viewMode==='grid') renderGridView(); else renderListView();
   renderTransferNote();
+  if(opts.scroll) scrollToToday();
 }
 
 function renderTransferNote(){
@@ -615,14 +652,14 @@ document.getElementById('closeModal').addEventListener('click', closeModal);
 document.getElementById('overlay').addEventListener('click', (e)=>{ if(e.target.id==='overlay') closeModal(); });
 
 /* ================= TOOLBAR EVENTS ================= */
-document.getElementById('prevYear').addEventListener('click', ()=>{ state.year--; saveState(); render(); });
-document.getElementById('nextYear').addEventListener('click', ()=>{ state.year++; saveState(); render(); });
+document.getElementById('prevYear').addEventListener('click', ()=>{ state.year--; saveState(); render({scroll:true}); });
+document.getElementById('nextYear').addEventListener('click', ()=>{ state.year++; saveState(); render({scroll:true}); });
 document.getElementById('yearInput').addEventListener('change', (e)=>{
   const v = parseInt(e.target.value,10);
-  if(!isNaN(v)){ state.year=v; saveState(); render(); }
+  if(!isNaN(v)){ state.year=v; saveState(); render({scroll:true}); }
 });
-document.getElementById('viewGrid').addEventListener('click', ()=>{ state.viewMode='grid'; saveState(); render(); });
-document.getElementById('viewList').addEventListener('click', ()=>{ state.viewMode='list'; saveState(); render(); });
+document.getElementById('viewGrid').addEventListener('click', ()=>{ state.viewMode='grid'; saveState(); render({scroll:true}); });
+document.getElementById('viewList').addEventListener('click', ()=>{ state.viewMode='list'; saveState(); render({scroll:true}); });
 document.getElementById('weekMon').addEventListener('click', ()=>{ state.weekStart='mon'; saveState(); render(); });
 document.getElementById('weekSun').addEventListener('click', ()=>{ state.weekStart='sun'; saveState(); render(); });
 document.getElementById('holidaySelect').addEventListener('change', (e)=>{ state.holidayCountry=e.target.value; saveState(); render(); });
@@ -659,7 +696,7 @@ document.getElementById('importFile').addEventListener('change', (e)=>{
 document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
 
 /* ================= INIT ================= */
-render();
+render({scroll:true});
 </script>
 </body>
 </html>
