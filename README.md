@@ -1,97 +1,80 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&size=28&pause=1200&color=39D353&center=true&vCenter=true&width=600&lines=%D0%94%D0%BD%D0%B5%D0%B2%D0%BD%D0%B8%D0%BA+%D0%BF%D0%BB%D0%B0%D0%BD%D0%BE%D0%B2;%D0%9F%D0%BB%D0%B0%D0%BD+%E2%86%92+%D0%A4%D0%B0%D0%BA%D1%82+%E2%86%92+%D0%97%D0%B0%D0%BC%D0%B5%D1%82%D0%BA%D0%B8;%D0%9A%D0%BE%D0%BC%D0%BC%D0%B8%D1%82+%D0%BA%D0%B0%D0%B6%D0%B4%D1%8B%D0%B9+%D0%B4%D0%B5%D0%BD%D1%8C+%F0%9F%9F%A9" alt="Дневник планов" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=180&section=header&text=Мой%20дневник&fontSize=45&fontColor=ffffff&animation=fadeIn&desc=заметки%20·%20планы%20·%20календарь&descAlignY=60" width="100%"/>
 
-![Status](https://img.shields.io/badge/status-active-39D353?style=flat-square&labelColor=0b0f14)
-![Update](https://img.shields.io/badge/обновление-ежедневно-38bdf8?style=flat-square&labelColor=0b0f14)
-![Made with](https://img.shields.io/badge/made%20with-markdown-fb923c?style=flat-square&labelColor=0b0f14)
+<a href="#">
+  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=6C5CE7&center=true&vCenter=true&width=500&lines=Каждый+день+заметка;Каждый+день+коммит;Зелёный+график+%F0%9F%9F%A9" alt="Typing SVG" />
+</a>
 
-</div>
-
----
-
-### 🐍 Граф контрибуций
-
-<div align="center">
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/USERNAME/REPO/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/USERNAME/REPO/output/github-contribution-grid-snake.svg" />
-  <img alt="змейка по графу контрибуций" src="https://raw.githubusercontent.com/USERNAME/REPO/output/github-contribution-grid-snake.svg" />
-</picture>
-</div>
-
-> Замени `USERNAME/REPO` на свой логин и имя репозитория после того, как настроишь workflow из `.github/workflows/snake.yml` (инструкция — в конце файла).
-
----
-
-## Легенда
-
-| Значок | Значение |
-|:---:|---|
-| 🟩 | сделано |
-| 🟨 | в процессе |
-| ⬜ | запланировано |
-| 🟥 | не успел / перенёс |
-
----
-
-## Записи
-
-<details open>
-<summary><b>📆 25.08.2026 — Пн</b></summary>
-
-**План:**
-- [ ] Задача 1
-- [ ] Задача 2
-- [ ] Задача 3
-
-**Заметки:**
-> ...
-
-</details>
-
-<details>
-<summary><b>📆 24.08.2026 — Вс</b></summary>
-
-**План:**
-- [x] Пример выполненной задачи
-- [ ] Пример незавершённой
-
-**Заметки:**
-> ...
-
-</details>
-
----
-
-<div align="center">
-
-<sub>Держи репозиторий приватным + включи <code>Include private contributions on my profile</code> в настройках GitHub, если не хочешь показывать содержимое, но хочешь зелёный граф.</sub>
+![Streak](https://img.shields.io/badge/дней%20подряд-считай%20сам-6C5CE7?style=for-the-badge)
+![Last update](https://img.shields.io/badge/обновлено-25.08.2026-00CEC9?style=for-the-badge)
 
 </div>
+
+---
+
+## 📍 Сегодня
+
+**25.08.2026, вторник**
+
+- [ ] задача 1
+- [ ] задача 2
+- [ ] задача 3
+
+💭 Мысль дня: _(коротко, что важно/что чувствую/что понял сегодня)_
+
+---
+
+## 🗓️ Август 2026
+
+| Пн | Вт | Ср | Чт | Пт | Сб | Вс |
+|----|----|----|----|----|----|----|
+|    |    |    |    |    |    | 1  |
+| 2  | 3  | 4  | 5  | 6  | 7  | 8  |
+| 9  | 10 | 11 | 12 | 13 | 14 | 15 |
+| 16 | 17 | 18 | 19 | 20 | 21 | 22 |
+| 23 | 24 | **[25](#-запись-250820) 🟩** | 26 | 27 | 28 | 29 |
+| 30 | 31 |    |    |    |    |    |
+
+> 🟩 — день, когда была запись/коммит. Отмечай жирным + эмодзи число, ссылку веди на якорь записи ниже.
+
+---
+
+## 🎯 Планы
+
+Общий список того, что хочу сделать / куда двигаюсь. Переношу вниз, в «Сделано», когда готово.
+
+- [ ] план 1
+- [ ] план 2
+- [ ] план 3
+
+### ✅ Сделано
+- [x] 25.08.2026 — начал вести этот дневник в README
+
+---
+
+## 📖 Записи по дням
 
 <!--
-Шаблон для нового дня — копируй блок целиком выше существующих записей:
+Шаблон новой записи — копируй и вставляй СВЕРХУ этого блока, перед предыдущими записями:
 
-<details>
-<summary><b>📆 DD.MM.YYYY — День недели</b></summary>
-
-**План:**
-- [ ] ...
-
-**Заметки:**
-> ...
-
-</details>
+### 📝 Запись ДД.ММ.ГГГГ
+- что сделал / что произошло
+- что понял / вывод
+- TODO на завтра:
 -->
+
+### 📝 Запись 25.08.2026
+- Создал README как личный дневник/календарь
+- Настроил структуру: сегодня / календарь месяца / планы / записи
+- TODO на завтра: заполнить первую настоящую запись
 
 ---
 
-## 🐍 Как включить анимированную змейку
+<div align="center">
 
-1. Убедись, что `Include private contributions` включён в настройках профиля (иначе граф пуст).
-2. Положи файл `.github/workflows/snake.yml` (рядом в этой же поставке) в свой репозиторий.
-3. В настройках репозитория **Settings → Actions → General → Workflow permissions** выбери **Read and write permissions**.
-4. Запусти workflow вручную первый раз: **Actions → generate snake → Run workflow**.
-5. Он создаст отдельную ветку `output` с SVG-файлами и дальше будет обновлять её каждый день сам (уже настроено на `cron` в workflow).
-6. Замени `USERNAME/REPO` в этом README на свои значения — картинка выше начнёт показывать анимацию.
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=твой-ник&theme=radical&hide_border=true" alt="streak stats"/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00CEC9,100:6C5CE7&height=100&section=footer"/>
+
+</div>
