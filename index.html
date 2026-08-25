@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Планёр — годовой трекер планов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- THEMES ---------- */
+body[data-theme="terminal"]{
+  --bg:#0b0f14; --surface:#111820; --surface2:#161f2a; --border:#243040;
+  --text:#e6edf3; --muted:#7d8aa0; --accent:#39d353; --accent2:#26a641;
+  --accent-soft: rgba(57,211,83,.14); --weekend:#1a2433; --holiday:#3a2130;
+  --holiday-text:#ff9d9d; --level1:#0f5132; --level2:#1c7c3f; --level3:#2ea34a; --level4:#39d353;
+}
+body[data-theme="ocean"]{
+  --bg:#081019; --surface:#0e1a26; --surface2:#122234; --border:#1e3348;
+  --text:#e3f1fb; --muted:#7c9bb5; --accent:#38bdf8; --accent2:#0ea5e9;
+  --accent-soft: rgba(56,189,248,.14); --weekend:#122436; --holiday:#2a1c3a;
+  --holiday-text:#c9a6ff; --level1:#0c3a52; --level2:#116284; --level3:#1a93c4; --level4:#38bdf8;
+}
+body[data-theme="sunset"]{
+  --bg:#140b12; --surface:#1d1119; --surface2:#261722; --border:#3a2333;
+  --text:#f7e9ef; --muted:#b48ea2; --accent:#fb923c; --accent2:#f43f5e;
+  --accent-soft: rgba(251,146,60,.16); --weekend:#241621; --holiday:#331a22;
+  --holiday-text:#ff9fb0; --level1:#5b2337; --level2:#8a3a2e; --level3:#c1591f; --level4:#fb923c;
+}
+body[data-theme="sakura"]{
+  --bg:#fdf6f8; --surface:#ffffff; --surface2:#fbeef2; --border:#f0d7df;
+  --text:#3a2530; --muted:#9c7c88; --accent:#ec4899; --accent2:#db2777;
+  --accent-soft: rgba(236,72,153,.12); --weekend:#fdeef4; --holiday:#fff1e6;
+  --holiday-text:#c2621b; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
+}
+body[data-theme="mono"]{
+  --bg:#fafafa; --surface:#ffffff; --surface2:#f0f0f0; --border:#dcdcdc;
+  --text:#1a1a1a; --muted:#767676; --accent:#111111; --accent2:#404040;
+  --accent-soft: rgba(0,0,0,.08); --weekend:#f0f0f0; --holiday:#f5e9e9;
+  --holiday-text:#8a3a3a; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
+}
+body[data-theme="forest"]{
+  --bg:#0e120c; --surface:#161c11; --surface2:#1c2416; --border:#2c3720;
+  --text:#e7edd9; --muted:#8fa07a; --accent:#c9a227; --accent2:#e0b93a;
+  --accent-soft: rgba(201,162,39,.16); --weekend:#1b2314; --holiday:#2a1c14;
+  --holiday-text:#e0a468; --level1:#3a3f1c; --level2:#5c6420; --level3:#8a8f22; --level4:#c9a227;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0; background:var(--bg); color:var(--text); font-family:var(--font-sans);
+  min-height:100vh; transition:background .25s ease, color .25s ease;
+}
+::selection{ background:var(--accent-soft); }
+
+.wrap{ max-width:1280px; margin:0 auto; padding:20px 16px 60px; }
+
+header.top{ display:flex; flex-direction:column; gap:4px; margin-bottom:18px; }
+header.top h1{
+  font-family:var(--font-mono); font-size:22px; letter-spacing:-.02em; margin:0;
+  display:flex; align-items:center; gap:10px;
+}
+header.top h1 .dot{ width:10px; height:10px; border-radius:3px; background:var(--accent); display:inline-block; }
+header.top p{ margin:0; color:var(--muted); font-size:13px; }
+
+/* ---------- TOOLBAR ---------- */
+.toolbar{
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:12px; margin-bottom:20px;
+}
+.tb-group{ display:flex; align-items:center; gap:6px; }
+.tb-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-right:2px; }
+.btn{
+  font-family:var(--font-sans); font-size:13px; font-weight:500; color:var(--text);
+  background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  padding:7px 12px; cursor:pointer; transition:.15s;
+}
+.btn:hover{ border-color:var(--accent); }
+.btn.active{ background:var(--accent); color:var(--bg); border-color:var(--accent); font-weight:600; }
+.btn.icon{ padding:7px 10px; }
+select, input[type=number]{
+  font-family:var(--font-sans); font-size:13px; color:var(--text); background:var(--surface2);
+  border:1px solid var(--border); border-radius:var(--radius-sm); padding:7px 10px; cursor:pointer;
+}
+input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
+.spacer{ flex:1; }
+.swatch-row{ display:flex; gap:6px; }
+.swatch{
+  width:22px; height:22px; border-radius:50%; border:2px solid var(--border); cursor:pointer; padding:0;
+}
+.swatch[data-theme="terminal"]{ background:#39d353; }
+.swatch[data-theme="ocean"]{ background:#38bdf8; }
+.swatch[data-theme="sunset"]{ background:#fb923c; }
+.swatch[data-theme="sakura"]{ background:#ec4899; }
+.swatch[data-theme="mono"]{ background:#111111; }
+.swatch[data-theme="forest"]{ background:#c9a227; }
+.swatch.active{ border-color:var(--text); transform:scale(1.15); }
+
+/* ---------- YEAR GRID VIEW ---------- */
+#calendarArea{ display:grid; gap:16px; }
+#calendarArea.grid-view{ grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); }
+#calendarArea.list-view{ grid-template-columns:1fr; max-width:640px; margin:0 auto; }
+
+.month-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  padding:14px; display:flex; flex-direction:column; gap:10px;
+}
+.month-title{ font-family:var(--font-mono); font-weight:700; font-size:14px; text-transform:uppercase; letter-spacing:.05em; }
+.weekday-row{ display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
+.weekday-row span{ font-size:10px; text-align:center; color:var(--muted); font-family:var(--font-mono); }
+.days-grid{ display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
+
+.day-cell{
+  aspect-ratio:1/1; border-radius:5px; border:1px solid transparent; background:var(--surface2);
+  display:flex; align-items:center; justify-content:center; position:relative; cursor:pointer;
+  font-family:var(--font-mono); font-size:11px; color:var(--text); transition:.12s;
+}
+.day-cell:hover{ border-color:var(--accent); }
+.day-cell.empty{ visibility:hidden; cursor:default; }
+.day-cell.weekend{ background:var(--weekend); }
+.day-cell.holiday{ background:var(--holiday); color:var(--holiday-text); font-weight:600; }
+.day-cell.today{ box-shadow:0 0 0 2px var(--accent) inset; font-weight:700; }
+.day-cell.lvl1{ background:var(--level1); color:#fff; }
+.day-cell.lvl2{ background:var(--level2); color:#fff; }
+.day-cell.lvl3{ background:var(--level3); color:#fff; }
+.day-cell.lvl4{ background:var(--level4); color:#08130a; }
+.day-cell .note-dot{
+  position:absolute; top:2px; right:2px; width:5px; height:5px; border-radius:50%; background:var(--accent2);
+}
+
+/* ---------- LIST VIEW ---------- */
+.list-month-title{
+  font-family:var(--font-mono); font-weight:700; font-size:13px; text-transform:uppercase;
+  letter-spacing:.06em; color:var(--muted); margin:14px 0 4px; padding-left:4px;
+}
+.list-day-row{
+  display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--radius-sm); padding:9px 12px; cursor:pointer; margin-bottom:6px; transition:.12s;
+}
+.list-day-row:hover{ border-color:var(--accent); }
+.list-day-row.weekend{ background:var(--weekend); }
+.list-day-row.holiday{ background:var(--holiday); }
+.list-day-num{ font-family:var(--font-mono); font-weight:700; font-size:15px; width:28px; text-align:center; }
+.list-day-dow{ font-family:var(--font-mono); font-size:11px; color:var(--muted); width:24px; }
+.list-day-holiday-name{ font-size:11px; color:var(--holiday-text); flex:0 0 auto; }
+.list-day-progress{ flex:1; height:6px; background:var(--surface2); border-radius:3px; overflow:hidden; }
+.list-day-progress i{ display:block; height:100%; background:var(--accent); }
+.list-day-meta{ display:flex; align-items:center; gap:6px; color:var(--muted); font-size:11px; font-family:var(--font-mono); }
+
+/* ---------- MODAL ---------- */
+.overlay{
+  position:fixed; inset:0; background:rgba(0,0,0,.55); display:none; align-items:center; justify-content:center;
+  padding:16px; z-index:50;
+}
+.overlay.show{ display:flex; }
+.modal{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+  width:100%; max-width:480px; max-height:88vh; overflow:auto; padding:20px; display:flex; flex-direction:column; gap:14px;
+}
+.modal-header{ display:flex; align-items:center; justify-content:space-between; }
+.modal-header h2{ font-family:var(--font-mono); font-size:16px; margin:0; }
+.modal-header .close{ background:none; border:none; color:var(--muted); font-size:20px; cursor:pointer; line-height:1; }
+.modal-header .close:hover{ color:var(--text); }
+.holiday-badge{ display:inline-block; font-size:11px; color:var(--holiday-text); background:var(--holiday); padding:3px 8px; border-radius:20px; }
+
+.plan-item{ display:flex; align-items:center; gap:8px; }
+.plan-item input[type=text]{
+  flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  color:var(--text); font-family:var(--font-sans); font-size:13px; padding:8px 10px;
+}
+.plan-item input[type=text].done{ text-decoration:line-through; color:var(--muted); }
+.plan-item input[type=checkbox]{ width:17px; height:17px; accent-color:var(--accent); cursor:pointer; }
+.plan-item .del{ background:none; border:none; color:var(--muted); font-size:16px; cursor:pointer; padding:2px 6px; }
+.plan-item .del:hover{ color:var(--holiday-text); }
+.add-plan-btn{ align-self:flex-start; }
+
+textarea{
+  width:100%; min-height:90px; resize:vertical; background:var(--surface2); border:1px solid var(--border);
+  border-radius:var(--radius-sm); color:var(--text); font-family:var(--font-sans); font-size:13px; padding:10px;
+}
+label.field-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+.modal-footer{ display:flex; justify-content:space-between; gap:8px; }
+
+footer.hint{ text-align:center; color:var(--muted); font-size:12px; margin-top:30px; font-family:var(--font-mono); }
+footer.hint a{ color:var(--accent); }
+
+@media(max-width:520px){
+  header.top h1{ font-size:18px; }
+  .toolbar{ padding:10px; }
+  #calendarArea.grid-view{ grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body data-theme="terminal">
+<div class="wrap">
+
+  <header class="top">
+    <h1><span class="dot"></span>Планёр</h1>
+    <p>Годовой календарь: планы, отметки о выполнении и заметки на каждый день</p>
+  </header>
+
+  <div class="toolbar">
+    <div class="tb-group">
+      <button class="btn icon" id="prevYear">‹</button>
+      <input type="number" id="yearInput" />
+      <button class="btn icon" id="nextYear">›</button>
+    </div>
+
+    <div class="tb-group">
+      <span class="tb-label">Вид</span>
+      <button class="btn" data-view="grid" id="viewGrid">Сетка</button>
+      <button class="btn" data-view="list" id="viewList">Список</button>
+    </div>
+
+    <div class="tb-group">
+      <span class="tb-label">Неделя с</span>
+      <button class="btn" data-week="mon" id="weekMon">Пн</button>
+      <button class="btn" data-week="sun" id="weekSun">Вс</button>
+    </div>
+
+    <div class="tb-group">
+      <span class="tb-label">Праздники</span>
+      <select id="holidaySelect">
+        <option value="none">Не показывать</option>
+        <option value="ru">Россия</option>
+        <option value="by">Беларусь</option>
+      </select>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="tb-group">
+      <span class="tb-label">Тема</span>
+      <div class="swatch-row" id="themeSwatches">
+        <button class="swatch" data-theme="terminal" title="Terminal"></button>
+        <button class="swatch" data-theme="ocean" title="Ocean"></button>
+        <button class="swatch" data-theme="sunset" title="Sunset"></button>
+        <button class="swatch" data-theme="sakura" title="Sakura"></button>
+        <button class="swatch" data-theme="mono" title="Mono"></button>
+        <button class="swatch" data-theme="forest" title="Forest"></button>
+      </div>
+    </div>
+
+    <div class="tb-group">
+      <button class="btn icon" id="exportBtn" title="Экспорт данных">⭳</button>
+      <button class="btn icon" id="importBtn" title="Импорт данных">⭱</button>
+      <input type="file" id="importFile" accept="application/json" style="display:none">
+    </div>
+  </div>
+
+  <div id="transferNote" style="display:none; font-size:12px; color:var(--muted); background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-sm); padding:8px 12px; margin-bottom:16px;"></div>
+
+  <div id="calendarArea" class="grid-view"></div>
+
+  <footer class="hint">index.html · данные хранятся локально в этом браузере · сделай экспорт для резервной копии</footer>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalDate">—</h2>
+      <button class="close" id="closeModal">×</button>
+    </div>
+    <div id="modalHolidayBadge"></div>
+
+    <div>
+      <label class="field-label">Планы</label>
+      <div id="planList" style="display:flex; flex-direction:column; gap:8px; margin-top:8px;"></div>
+      <button class="btn add-plan-btn" id="addPlanBtn" style="margin-top:8px;">+ Добавить пункт</button>
+    </div>
+
+    <div>
+      <label class="field-label">Заметки</label>
+      <textarea id="notesArea" placeholder="Свободные заметки на этот день…" style="margin-top:8px;"></textarea>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn" id="clearDayBtn">Очистить день</button>
+      <button class="btn active" id="saveDayBtn">Сохранить</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ================= STORAGE (localStorage with in-memory fallback) ================= */
+const STORAGE_KEY = 'planner-data-v1';
+let memoryFallback = null;
+function storageAvailable(){
+  try{ const k='__t'; localStorage.setItem(k,'1'); localStorage.removeItem(k); return true; }
+  catch(e){ return false; }
+}
+const HAS_LS = storageAvailable();
+
+function loadState(){
+  let raw = null;
+  if(HAS_LS){ raw = localStorage.getItem(STORAGE_KEY); }
+  else if(memoryFallback){ raw = memoryFallback; }
+  if(raw){ try{ return JSON.parse(raw); }catch(e){} }
+  return {
+    theme:'terminal', weekStart:'mon', viewMode:'grid', holidayCountry:'none',
+    year: new Date().getFullYear(), days:{}
+  };
+}
+function saveState(){
+  const raw = JSON.stringify(state);
+  if(HAS_LS){ localStorage.setItem(STORAGE_KEY, raw); }
+  else{ memoryFallback = raw; }
+}
+
+let state = loadState();
+
+/* ================= HOLIDAYS (базовые фиксированные даты) ================= */
+const HOLIDAYS = {
+  ru: [
+    [1,1,'Новый год'],[1,2,'Новогодние каникулы'],[1,3,'Новогодние каникулы'],
+    [1,4,'Новогодние каникулы'],[1,5,'Новогодние каникулы'],[1,6,'Новогодние каникулы'],
+    [1,7,'Рождество Христово'],[1,8,'Новогодние каникулы'],
+    [2,23,'День защитника Отечества'],
+    [3,8,'Международный женский день'],[5,1,'Праздник Весны и Труда'],
+    [5,9,'День Победы'],[6,12,'День России'],[11,4,'День народного единства']
+  ],
+  by: [
+    [1,1,'Новый год'],[1,7,'Рождество Христово (правосл.)'],[3,8,'Международный женский день'],
+    [5,1,'Праздник труда'],[5,9,'День Победы'],[7,3,'День Независимости'],
+    [11,7,'Октябрьская революция'],[12,25,'Рождество Христово (кат.)']
+  ]
+};
+function getHoliday(country, month, day){
+  if(country==='none') return null;
+  const list = HOLIDAYS[country] || [];
+  const found = list.find(h=>h[0]===month && h[1]===day);
+  return found ? found[2] : null;
+}
+
+/* ================= TRANSFERS (переносы выходных/рабочих дней по годам) =================
+   off  — дата становится дополнительным нерабочим днём (перенесённый выходной)
+   work — дата становится рабочей, хотя по умолчанию попадает на выходной (перенос "в другую сторону")
+   Источники: официальные постановления Правительства РФ / Совета Министров РБ.
+   Обновляй вручную, когда выходит постановление на новый год. */
+const TRANSFERS = {
+  ru: {
+    2026: {
+      off:[[1,9],[12,31]], work:[],
+      note:'Утверждено: постановление Правительства РФ от 24.09.2025 № 1466'
+    },
+    2027: {
+      off:[[11,5],[12,31],[2,22]], work:[[2,20]],
+      note:'Пока проект Минтруда, официально не утверждено (ожидается осенью 2026)'
+    }
+  },
+  by: {
+    2026: {
+      off:[[4,20]], work:[[4,25]],
+      note:'Утверждено: постановление Совета Министров РБ от 22.07.2025 № 397'
+    }
+  }
+};
+function getTransferInfo(country, year){ return (TRANSFERS[country]||{})[year] || null; }
+function isTransferOff(country, year, m, d){
+  const t = getTransferInfo(country, year); if(!t) return false;
+  return t.off.some(x=>x[0]===m && x[1]===d);
+}
+function isTransferWork(country, year, m, d){
+  const t = getTransferInfo(country, year); if(!t) return false;
+  return t.work.some(x=>x[0]===m && x[1]===d);
+}
+
+/* ================= HELPERS ================= */
+const MONTH_NAMES = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const DOW_MON = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+const DOW_SUN = ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'];
+function pad(n){ return n<10 ? '0'+n : ''+n; }
+function dateKey(y,m,d){ return `${y}-${pad(m+1)}-${pad(d)}`; }
+function isWeekendIdx(jsDay, weekStart){
+  // jsDay: 0=Sun..6=Sat
+  return jsDay===0 || jsDay===6;
+}
+function todayKey(){
+  const t=new Date(); return dateKey(t.getFullYear(), t.getMonth(), t.getDate());
+}
+function dayProgress(key){
+  const d = state.days[key];
+  if(!d || !d.plans || d.plans.length===0) return {total:0, done:0, ratio:0, hasNotes: !!(d&&d.notes&&d.notes.trim())};
+  const total = d.plans.length, done = d.plans.filter(p=>p.done).length;
+  return {total, done, ratio: total? done/total : 0, hasNotes: !!(d.notes && d.notes.trim())};
+}
+function levelClass(ratio, total){
+  if(total===0) return '';
+  if(ratio<=0) return '';
+  if(ratio<1) return ratio<0.4? 'lvl1' : (ratio<0.75? 'lvl2':'lvl3');
+  return 'lvl4';
+}
+
+/* ================= RENDER: GRID VIEW ================= */
+function buildMonthCard(year, month){
+  const card = document.createElement('div');
+  card.className='month-card';
+
+  const title = document.createElement('div');
+  title.className='month-title';
+  title.textContent = MONTH_NAMES[month];
+  card.appendChild(title);
+
+  const dowRow = document.createElement('div');
+  dowRow.className='weekday-row';
+  const dowArr = state.weekStart==='mon'? DOW_MON : DOW_SUN;
+  dowArr.forEach(d=>{ const s=document.createElement('span'); s.textContent=d; dowRow.appendChild(s); });
+  card.appendChild(dowRow);
+
+  const grid = document.createElement('div');
+  grid.className='days-grid';
+
+  const firstJsDay = new Date(year, month, 1).getDay(); // 0=Sun
+  let leading = state.weekStart==='mon' ? (firstJsDay===0?6:firstJsDay-1) : firstJsDay;
+  const daysInMonth = new Date(year, month+1, 0).getDate();
+
+  for(let i=0;i<leading;i++){
+    const e=document.createElement('div'); e.className='day-cell empty'; grid.appendChild(e);
+  }
+  for(let d=1; d<=daysInMonth; d++){
+    const jsDay = new Date(year, month, d).getDay();
+    const key = dateKey(year, month, d);
+    const cell = document.createElement('div');
+    cell.className='day-cell';
+    cell.textContent = d;
+    const country = state.holidayCountry;
+    const forcedWork = country!=='none' && isTransferWork(country, year, month+1, d);
+    const forcedOff = country!=='none' && isTransferOff(country, year, month+1, d);
+    if(isWeekendIdx(jsDay) && !forcedWork) cell.classList.add('weekend');
+    let hname = getHoliday(country, month+1, d);
+    if(!hname && forcedOff) hname='Перенесённый выходной';
+    if(hname) cell.classList.add('holiday');
+    if(key===todayKey()) cell.classList.add('today');
+    const prog = dayProgress(key);
+    const lvl = levelClass(prog.ratio, prog.total);
+    if(lvl) cell.classList.add(lvl);
+    if(prog.hasNotes){ const dot=document.createElement('span'); dot.className='note-dot'; cell.appendChild(dot); }
+    cell.title = hname ? hname : (forcedWork ? 'Рабочий день (перенос)' : '');
+    cell.addEventListener('click', ()=>openModal(key));
+    grid.appendChild(cell);
+  }
+  card.appendChild(grid);
+  return card;
+}
+
+function renderGridView(){
+  const area = document.getElementById('calendarArea');
+  area.innerHTML='';
+  area.className='grid-view';
+  for(let m=0;m<12;m++){ area.appendChild(buildMonthCard(state.year, m)); }
+}
+
+/* ================= RENDER: LIST VIEW ================= */
+function renderListView(){
+  const area = document.getElementById('calendarArea');
+  area.innerHTML='';
+  area.className='list-view';
+  const dowArr = state.weekStart==='mon'? DOW_MON : DOW_SUN;
+
+  for(let m=0;m<12;m++){
+    const h = document.createElement('div');
+    h.className='list-month-title';
+    h.textContent = `${MONTH_NAMES[m]} ${state.year}`;
+    area.appendChild(h);
+
+    const daysInMonth = new Date(state.year, m+1, 0).getDate();
+    for(let d=1; d<=daysInMonth; d++){
+      const jsDay = new Date(state.year, m, d).getDay();
+      const key = dateKey(state.year, m, d);
+      const row = document.createElement('div');
+      row.className='list-day-row';
+      const country = state.holidayCountry;
+      const forcedWork = country!=='none' && isTransferWork(country, state.year, m+1, d);
+      const forcedOff = country!=='none' && isTransferOff(country, state.year, m+1, d);
+      if(isWeekendIdx(jsDay) && !forcedWork) row.classList.add('weekend');
+      let hname = getHoliday(country, m+1, d);
+      if(!hname && forcedOff) hname='Перенесённый выходной';
+      if(!hname && forcedWork) hname='Рабочий день (перенос)';
+      if(hname && !forcedWork) row.classList.add('holiday');
+      if(key===todayKey()) row.style.boxShadow='0 0 0 2px var(--accent) inset';
+
+      const num = document.createElement('div'); num.className='list-day-num'; num.textContent=d;
+      const dow = document.createElement('div'); dow.className='list-day-dow';
+      const idx = state.weekStart==='mon' ? (jsDay===0?6:jsDay-1) : jsDay;
+      dow.textContent = dowArr[idx];
+
+      const prog = dayProgress(key);
+      const progWrap = document.createElement('div'); progWrap.className='list-day-progress';
+      const bar = document.createElement('i'); bar.style.width = (prog.ratio*100)+'%'; progWrap.appendChild(bar);
+
+      const meta = document.createElement('div'); meta.className='list-day-meta';
+      meta.textContent = prog.total ? `${prog.done}/${prog.total}` : '';
+      if(prog.hasNotes){ const n=document.createElement('span'); n.textContent='✎'; meta.appendChild(n); }
+
+      row.appendChild(num); row.appendChild(dow);
+      if(hname){ const hb=document.createElement('div'); hb.className='list-day-holiday-name'; hb.textContent=hname; row.appendChild(hb); }
+      row.appendChild(progWrap); row.appendChild(meta);
+      row.addEventListener('click', ()=>openModal(key));
+      area.appendChild(row);
+    }
+  }
+}
+
+function render(){
+  document.body.setAttribute('data-theme', state.theme);
+  document.getElementById('yearInput').value = state.year;
+  document.getElementById('holidaySelect').value = state.holidayCountry;
+
+  document.getElementById('viewGrid').classList.toggle('active', state.viewMode==='grid');
+  document.getElementById('viewList').classList.toggle('active', state.viewMode==='list');
+  document.getElementById('weekMon').classList.toggle('active', state.weekStart==='mon');
+  document.getElementById('weekSun').classList.toggle('active', state.weekStart==='sun');
+
+  document.querySelectorAll('.swatch').forEach(s=>{
+    s.classList.toggle('active', s.dataset.theme===state.theme);
+  });
+
+  if(state.viewMode==='grid') renderGridView(); else renderListView();
+  renderTransferNote();
+}
+
+function renderTransferNote(){
+  const el = document.getElementById('transferNote');
+  const country = state.holidayCountry;
+  if(country==='none'){ el.style.display='none'; return; }
+  const info = getTransferInfo(country, state.year);
+  el.style.display='block';
+  if(info){
+    el.textContent = `ℹ ${info.note}`;
+  } else {
+    el.textContent = `⚠ Для ${state.year} года переносы выходных дней в базе не заданы (пока не утверждены или не добавлены вручную) — показаны только базовые праздники без учёта переносов.`;
+  }
+}
+
+/* ================= MODAL ================= */
+let currentKey = null;
+function openModal(key){
+  currentKey = key;
+  const [y,m,d] = key.split('-').map(Number);
+  const jsDay = new Date(y, m-1, d).getDay();
+  const weekdayFull = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'][jsDay];
+  document.getElementById('modalDate').textContent = `${d} ${MONTH_NAMES[m-1].toLowerCase()} ${y}, ${weekdayFull}`;
+
+  const hname = getHoliday(state.holidayCountry, m, d);
+  const badgeWrap = document.getElementById('modalHolidayBadge');
+  badgeWrap.innerHTML='';
+  if(hname){ const b=document.createElement('span'); b.className='holiday-badge'; b.textContent=hname; badgeWrap.appendChild(b); }
+
+  const dayData = state.days[key] || {plans:[], notes:''};
+  renderPlanList(dayData.plans);
+  document.getElementById('notesArea').value = dayData.notes || '';
+
+  document.getElementById('overlay').classList.add('show');
+}
+function closeModal(){ document.getElementById('overlay').classList.remove('show'); currentKey=null; }
+
+function renderPlanList(plans){
+  const list = document.getElementById('planList');
+  list.innerHTML='';
+  plans.forEach((p, idx)=>{
+    const row = document.createElement('div'); row.className='plan-item';
+    const cb = document.createElement('input'); cb.type='checkbox'; cb.checked=!!p.done;
+    cb.addEventListener('change', ()=>{ p.done=cb.checked; txt.classList.toggle('done', cb.checked); });
+    const txt = document.createElement('input'); txt.type='text'; txt.value=p.text||'';
+    if(p.done) txt.classList.add('done');
+    txt.addEventListener('input', ()=>{ p.text=txt.value; });
+    const del = document.createElement('button'); del.className='del'; del.textContent='×';
+    del.addEventListener('click', ()=>{ plans.splice(idx,1); renderPlanList(plans); });
+    row.appendChild(cb); row.appendChild(txt); row.appendChild(del);
+    list.appendChild(row);
+  });
+  list._plans = plans;
+}
+
+document.getElementById('addPlanBtn').addEventListener('click', ()=>{
+  const list = document.getElementById('planList');
+  const plans = list._plans || [];
+  plans.push({text:'', done:false});
+  renderPlanList(plans);
+  const inputs = list.querySelectorAll('input[type=text]');
+  if(inputs.length) inputs[inputs.length-1].focus();
+});
+
+document.getElementById('saveDayBtn').addEventListener('click', ()=>{
+  if(!currentKey) return;
+  const list = document.getElementById('planList');
+  const plans = (list._plans||[]).filter(p=>p.text && p.text.trim()!=='');
+  const notes = document.getElementById('notesArea').value;
+  if(plans.length===0 && notes.trim()===''){
+    delete state.days[currentKey];
+  } else {
+    state.days[currentKey] = {plans, notes};
+  }
+  saveState();
+  closeModal();
+  render();
+});
+
+document.getElementById('clearDayBtn').addEventListener('click', ()=>{
+  if(!currentKey) return;
+  delete state.days[currentKey];
+  saveState();
+  closeModal();
+  render();
+});
+
+document.getElementById('closeModal').addEventListener('click', closeModal);
+document.getElementById('overlay').addEventListener('click', (e)=>{ if(e.target.id==='overlay') closeModal(); });
+
+/* ================= TOOLBAR EVENTS ================= */
+document.getElementById('prevYear').addEventListener('click', ()=>{ state.year--; saveState(); render(); });
+document.getElementById('nextYear').addEventListener('click', ()=>{ state.year++; saveState(); render(); });
+document.getElementById('yearInput').addEventListener('change', (e)=>{
+  const v = parseInt(e.target.value,10);
+  if(!isNaN(v)){ state.year=v; saveState(); render(); }
+});
+document.getElementById('viewGrid').addEventListener('click', ()=>{ state.viewMode='grid'; saveState(); render(); });
+document.getElementById('viewList').addEventListener('click', ()=>{ state.viewMode='list'; saveState(); render(); });
+document.getElementById('weekMon').addEventListener('click', ()=>{ state.weekStart='mon'; saveState(); render(); });
+document.getElementById('weekSun').addEventListener('click', ()=>{ state.weekStart='sun'; saveState(); render(); });
+document.getElementById('holidaySelect').addEventListener('change', (e)=>{ state.holidayCountry=e.target.value; saveState(); render(); });
+
+document.getElementById('themeSwatches').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.swatch');
+  if(!btn) return;
+  state.theme = btn.dataset.theme; saveState(); render();
+});
+
+document.getElementById('exportBtn').addEventListener('click', ()=>{
+  const blob = new Blob([JSON.stringify(state, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url; a.download=`planner-backup-${state.year}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+document.getElementById('importBtn').addEventListener('click', ()=> document.getElementById('importFile').click());
+document.getElementById('importFile').addEventListener('change', (e)=>{
+  const file = e.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = (evt)=>{
+    try{
+      const parsed = JSON.parse(evt.target.result);
+      if(parsed && parsed.days){ state = Object.assign(loadState(), parsed); saveState(); render(); }
+      else alert('Файл не похож на резервную копию планёра');
+    }catch(err){ alert('Не удалось прочитать файл'); }
+  };
+  reader.readAsText(file);
+  e.target.value='';
+});
+
+document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeModal(); });
+
+/* ================= INIT ================= */
+render();
+</script>
+</body>
+</html>
