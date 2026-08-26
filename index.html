@@ -18,37 +18,37 @@
 body[data-theme="terminal"]{
   --bg:#0b0f14; --surface:#111820; --surface2:#161f2a; --border:#243040;
   --text:#e6edf3; --muted:#7d8aa0; --accent:#39d353; --accent2:#26a641;
-  --accent-soft: rgba(57,211,83,.14); --weekend:#1a2433; --holiday:#3a2130;
+  --accent-soft: rgba(57,211,83,.14); --weekend:#1a2433; --weekend-sat:#1e2c40; --weekend-sun:#141b26; --holiday:#3a2130;
   --holiday-text:#ff9d9d; --level1:#0f5132; --level2:#1c7c3f; --level3:#2ea34a; --level4:#39d353;
 }
 body[data-theme="ocean"]{
   --bg:#081019; --surface:#0e1a26; --surface2:#122234; --border:#1e3348;
   --text:#e3f1fb; --muted:#7c9bb5; --accent:#38bdf8; --accent2:#0ea5e9;
-  --accent-soft: rgba(56,189,248,.14); --weekend:#122436; --holiday:#2a1c3a;
+  --accent-soft: rgba(56,189,248,.14); --weekend:#122436; --weekend-sat:#173049; --weekend-sun:#0d1c2c; --holiday:#2a1c3a;
   --holiday-text:#c9a6ff; --level1:#0c3a52; --level2:#116284; --level3:#1a93c4; --level4:#38bdf8;
 }
 body[data-theme="sunset"]{
   --bg:#140b12; --surface:#1d1119; --surface2:#261722; --border:#3a2333;
   --text:#f7e9ef; --muted:#b48ea2; --accent:#fb923c; --accent2:#f43f5e;
-  --accent-soft: rgba(251,146,60,.16); --weekend:#241621; --holiday:#331a22;
+  --accent-soft: rgba(251,146,60,.16); --weekend:#241621; --weekend-sat:#2e1c29; --weekend-sun:#1a0f18; --holiday:#331a22;
   --holiday-text:#ff9fb0; --level1:#5b2337; --level2:#8a3a2e; --level3:#c1591f; --level4:#fb923c;
 }
 body[data-theme="sakura"]{
   --bg:#fdf6f8; --surface:#ffffff; --surface2:#fbeef2; --border:#f0d7df;
   --text:#3a2530; --muted:#9c7c88; --accent:#ec4899; --accent2:#db2777;
-  --accent-soft: rgba(236,72,153,.12); --weekend:#fdeef4; --holiday:#fff1e6;
+  --accent-soft: rgba(236,72,153,.12); --weekend:#fdeef4; --weekend-sat:#fdf3f7; --weekend-sun:#f8dfe9; --holiday:#fff1e6;
   --holiday-text:#c2621b; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
 }
 body[data-theme="mono"]{
   --bg:#fafafa; --surface:#ffffff; --surface2:#f0f0f0; --border:#dcdcdc;
   --text:#1a1a1a; --muted:#767676; --accent:#111111; --accent2:#404040;
-  --accent-soft: rgba(0,0,0,.08); --weekend:#f0f0f0; --holiday:#f5e9e9;
+  --accent-soft: rgba(0,0,0,.08); --weekend:#f0f0f0; --weekend-sat:#f5f5f5; --weekend-sun:#e6e6e6; --holiday:#f5e9e9;
   --holiday-text:#8a3a3a; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
 }
 body[data-theme="forest"]{
   --bg:#0e120c; --surface:#161c11; --surface2:#1c2416; --border:#2c3720;
   --text:#e7edd9; --muted:#8fa07a; --accent:#c9a227; --accent2:#e0b93a;
-  --accent-soft: rgba(201,162,39,.16); --weekend:#1b2314; --holiday:#2a1c14;
+  --accent-soft: rgba(201,162,39,.16); --weekend:#1b2314; --weekend-sat:#212b18; --weekend-sun:#141a0e; --holiday:#2a1c14;
   --holiday-text:#e0a468; --level1:#3a3f1c; --level2:#5c6420; --level3:#8a8f22; --level4:#c9a227;
 }
 
@@ -131,6 +131,8 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 .day-cell:hover{ border-color:var(--accent); }
 .day-cell.empty{ visibility:hidden; cursor:default; }
 .day-cell.weekend{ background:var(--weekend); }
+.day-cell.weekend-sat{ background:var(--weekend-sat); }
+.day-cell.weekend-sun{ background:var(--weekend-sun); }
 .day-cell.holiday{ background:var(--holiday); color:var(--holiday-text); font-weight:600; }
 .day-cell.today{ box-shadow:0 0 0 2px var(--accent) inset; font-weight:700; }
 .day-cell.lvl1{ background:var(--level1); color:#fff; }
@@ -152,6 +154,8 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 }
 .list-day-row:hover{ border-color:var(--accent); }
 .list-day-row.weekend{ background:var(--weekend); }
+.list-day-row.weekend-sat{ background:var(--weekend-sat); }
+.list-day-row.weekend-sun{ background:var(--weekend-sun); }
 .list-day-row.holiday{ background:var(--holiday); }
 .list-day-num{ font-family:var(--font-mono); font-weight:700; font-size:15px; width:28px; text-align:center; }
 .list-day-dow{ font-family:var(--font-mono); font-size:11px; color:var(--muted); width:24px; }
@@ -236,8 +240,11 @@ footer.hint a{ color:var(--accent); }
         <span class="tb-label">Праздники</span>
         <select id="holidaySelect">
           <option value="none">Не показывать</option>
-          <option value="ru">Россия</option>
           <option value="by">Беларусь</option>
+          <option value="ge">Грузия</option>
+          <option value="es">Испания</option>
+          <option value="kz">Казахстан</option>
+          <option value="ru">Россия</option>
         </select>
       </div>
 
@@ -342,6 +349,26 @@ const HOLIDAYS = {
     [1,1,'Новый год'],[1,2,'Новый год'],[1,7,'Рождество Христово (правосл.)'],[3,8,'Международный женский день'],
     [5,1,'Праздник труда'],[5,9,'День Победы'],[7,3,'День Независимости'],
     [11,7,'Октябрьская революция'],[12,25,'Рождество Христово (кат.)']
+  ],
+  ge: [
+    [1,1,'Новый год'],[1,2,'Новый год'],[1,7,'Рождество Христово'],[1,19,'Крещение Господне'],
+    [3,8,'Международный женский день'],[4,9,'День национального единства'],
+    [5,26,'День независимости'],[8,28,'Мариамоба (Успение Богородицы)'],
+    [10,14,'Мцхетоба-Светицховлоба'],[11,23,'Гиоргоба']
+  ],
+  es: [
+    [1,1,'Новый год'],[1,6,'Богоявление (Ден Королей)'],[5,1,'День труда'],
+    [8,15,'Успение Богородицы'],[10,12,'Национальный день Испании'],
+    [11,1,'День всех святых'],[12,6,'День Конституции'],
+    [12,8,'Непорочное зачатие'],[12,25,'Рождество Христово']
+  ],
+  kz: [
+    [1,1,'Новый год'],[1,2,'Новый год'],[1,7,'Рождество Христово (правосл.)'],
+    [3,8,'Международный женский день'],[3,15,'День Конституции'],
+    [3,21,'Наурыз мейрамы'],[3,22,'Наурыз мейрамы'],[3,23,'Наурыз мейрамы'],
+    [5,1,'День единства народа Казахстана'],[5,7,'День защитника Отечества'],
+    [5,9,'День Победы'],[7,6,'День столицы'],[10,25,'День Республики'],
+    [12,16,'День Независимости']
   ]
 };
 function getHoliday(country, month, day){
@@ -351,26 +378,39 @@ function getHoliday(country, month, day){
   return found ? found[2] : null;
 }
 
+/* Страны, законодательство которых НЕ предусматривает перенос выходных,
+   совпавших с праздником (в отличие от РФ/РБ/РК) — сообщаем об этом честно в UI. */
+const NO_TRANSFER_POLICY = {
+  ge: 'В Грузии перенос выходного, совпавшего с праздником, законом не предусмотрен.',
+  es: 'В Испании нет единой государственной системы переноса выходных — если праздник выпадает на воскресенье, дополнительный день отдыха не даётся (правило может отличаться по автономным сообществам).'
+};
+
 /* ================= TRANSFERS (переносы выходных/рабочих дней по годам) =================
    off  — дата становится дополнительным нерабочим днём (перенесённый выходной)
    work — дата становится рабочей, хотя по умолчанию попадает на выходной (перенос "в другую сторону")
-   Источники: официальные постановления Правительства РФ / Совета Министров РБ.
+   Источники: официальные постановления/приказы профильных ведомств.
    Обновляй вручную, когда выходит постановление на новый год. */
 const TRANSFERS = {
   ru: {
     2026: {
       off:[[1,9],[12,31]], work:[],
-      note:'Утверждено: постановление Правительства РФ от 24.09.2025 № 1466'
+      note:'постановление Правительства РФ от 24.09.2025 № 1466'
     },
     2027: {
       off:[[11,5],[12,31],[2,22]], work:[[2,20]],
-      note:'Пока проект Минтруда, официально не утверждено (ожидается осенью 2026)'
+      note:'проект Минтруда, официально не утверждено (ожидается осенью 2026)'
     }
   },
   by: {
     2026: {
       off:[[4,20]], work:[[4,25]],
-      note:'Утверждено: постановление Совета Министров РБ от 22.07.2025 № 397'
+      note:'постановление Совета Министров РБ от 22.07.2025 № 397'
+    }
+  },
+  kz: {
+    2026: {
+      off:[[3,9]], work:[],
+      note:'приказ Минтруда РК о переносе дней отдыха на 2026 год (8 марта, вс → 9 марта)'
     }
   }
 };
@@ -383,6 +423,7 @@ function isTransferWork(country, year, m, d){
   const t = getTransferInfo(country, year); if(!t) return false;
   return t.work.some(x=>x[0]===m && x[1]===d);
 }
+
 
 /* ================= HELPERS ================= */
 const MONTH_NAMES = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
@@ -418,7 +459,7 @@ function buildMonthCard(year, month){
 
   const title = document.createElement('div');
   title.className='month-title';
-  title.textContent = MONTH_NAMES[month];
+  title.textContent = MONTH_NAMES[month] + ' ' + year;
   card.appendChild(title);
 
   const dowRow = document.createElement('div');
@@ -446,7 +487,7 @@ function buildMonthCard(year, month){
     const country = state.holidayCountry;
     const forcedWork = country!=='none' && isTransferWork(country, year, month+1, d);
     const forcedOff = country!=='none' && isTransferOff(country, year, month+1, d);
-    if(isWeekendIdx(jsDay) && !forcedWork) cell.classList.add('weekend');
+    if(isWeekendIdx(jsDay) && !forcedWork) cell.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
     let hname = getHoliday(country, month+1, d);
     if(!hname && forcedOff) hname='Перенесённый выходной';
     if(hname) cell.classList.add('holiday');
@@ -492,7 +533,7 @@ function renderListView(){
       const country = state.holidayCountry;
       const forcedWork = country!=='none' && isTransferWork(country, state.year, m+1, d);
       const forcedOff = country!=='none' && isTransferOff(country, state.year, m+1, d);
-      if(isWeekendIdx(jsDay) && !forcedWork) row.classList.add('weekend');
+      if(isWeekendIdx(jsDay) && !forcedWork) row.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
       let hname = getHoliday(country, m+1, d);
       if(!hname && forcedOff) hname='Перенесённый выходной';
       if(!hname && forcedWork) hname='Рабочий день (перенос)';
@@ -566,13 +607,21 @@ function render(opts){
 function renderTransferNote(){
   const el = document.getElementById('transferNote');
   const country = state.holidayCountry;
-  if(country==='none'){ el.style.display='none'; return; }
-  const info = getTransferInfo(country, state.year);
   el.style.display='block';
+
+  if(country==='none'){
+    el.textContent = 'Переносы: не показывать';
+    return;
+  }
+  if(NO_TRANSFER_POLICY[country]){
+    el.textContent = `Переносы: ${NO_TRANSFER_POLICY[country]}`;
+    return;
+  }
+  const info = getTransferInfo(country, state.year);
   if(info){
-    el.textContent = `ℹ ${info.note}`;
+    el.textContent = `Переносы: утверждено — ${info.note}`;
   } else {
-    el.textContent = `⚠ Для ${state.year} года переносы выходных дней в базе не заданы (пока не утверждены или не добавлены вручную) — показаны только базовые праздники без учёта переносов.`;
+    el.textContent = `Переносы: для ${state.year} года данные не добавлены (пока не утверждены или не внесены вручную) — показаны только базовые праздники без учёта переносов.`;
   }
 }
 
