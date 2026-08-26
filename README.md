@@ -14,7 +14,6 @@
 ---
 
 ссылка на онлайн календарь:
-
 https://mrvolkov2.github.io/calendar-tasks-interactive/
 
 ## 📍 Сегодня
