@@ -16,7 +16,7 @@
 ссылка на онлайн календарь:
 https://mrvolkov2.github.io/calendar-tasks-interactive/
 
-## 📍 Сегодня
+## 📍 Вт
 
 **25.08.2026, вторник**
 
@@ -28,7 +28,7 @@ https://mrvolkov2.github.io/calendar-tasks-interactive/
 
 ---
 
-## 📍 Сегодня
+## 📍 Ср
 
 **26.08.2026, вторник**
 
