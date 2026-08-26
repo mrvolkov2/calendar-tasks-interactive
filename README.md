@@ -13,6 +13,10 @@
 
 ---
 
+ссылка на онлайн календарь:
+
+https://mrvolkov2.github.io/calendar-tasks-interactive/
+
 ## 📍 Сегодня
 
 **25.08.2026, вторник**
