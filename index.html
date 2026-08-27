@@ -14,42 +14,52 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
-/* ---------- THEMES ---------- */
+/* ---------- THEMES ----------
+   Идея: цвет темы = цвет календаря (тон фона/ячеек), а не только акцент.
+   Внутри каждой темы будни (surface2) — самые светлые ячейки, суббота чуть темнее,
+   воскресенье — самое тёмное. Праздники всегда красные (--holiday), независимо от темы —
+   это отдельный смысловой статус, не должен путаться с цветом темы. */
 body[data-theme="terminal"]{
-  --bg:#0b0f14; --surface:#111820; --surface2:#161f2a; --border:#243040;
-  --text:#e6edf3; --muted:#7d8aa0; --accent:#39d353; --accent2:#26a641;
-  --accent-soft: rgba(57,211,83,.14); --weekend:#1a2433; --weekend-sat:#1e2c40; --weekend-sun:#141b26; --holiday:#3a2130;
-  --holiday-text:#ff9d9d; --level1:#0f5132; --level2:#1c7c3f; --level3:#2ea34a; --level4:#39d353;
+  --bg:#0a120c; --surface:#101c14; --surface2:#1a2b1e; --border:#26392b;
+  --text:#e6f0e9; --muted:#84a68f; --accent:#2ea043; --accent2:#3fb950;
+  --accent-soft: rgba(46,160,67,.16); --weekend:#16241a; --weekend-sat:#152316; --weekend-sun:#0d1710; --holiday:#4a1620;
+  --holiday-text:#ff9d9d; --level1:#163a22; --level2:#1f5c30; --level3:#2a8a41; --level4:#2ea043;
 }
 body[data-theme="ocean"]{
-  --bg:#081019; --surface:#0e1a26; --surface2:#122234; --border:#1e3348;
-  --text:#e3f1fb; --muted:#7c9bb5; --accent:#38bdf8; --accent2:#0ea5e9;
-  --accent-soft: rgba(56,189,248,.14); --weekend:#122436; --weekend-sat:#173049; --weekend-sun:#0d1c2c; --holiday:#2a1c3a;
-  --holiday-text:#c9a6ff; --level1:#0c3a52; --level2:#116284; --level3:#1a93c4; --level4:#38bdf8;
+  --bg:#081420; --surface:#0d1f2e; --surface2:#163044; --border:#20415c;
+  --text:#e3f3fb; --muted:#7fa9c2; --accent:#7dd3fc; --accent2:#38bdf8;
+  --accent-soft: rgba(125,211,252,.16); --weekend:#122536; --weekend-sat:#122536; --weekend-sun:#0a1a26; --holiday:#4a1620;
+  --holiday-text:#ff9d9d; --level1:#0d3f56; --level2:#12658a; --level3:#1e97c9; --level4:#38bdf8;
+}
+body[data-theme="azure"]{
+  --bg:#060b16; --surface:#0a1226; --surface2:#142a52; --border:#1f3766;
+  --text:#e5edfb; --muted:#7f92b8; --accent:#3b82f6; --accent2:#60a5fa;
+  --accent-soft: rgba(59,130,246,.16); --weekend:#0f1c38; --weekend-sat:#0f1c38; --weekend-sun:#080f22; --holiday:#4a1620;
+  --holiday-text:#ff9d9d; --level1:#122a52; --level2:#1b3f7a; --level3:#2a5bb0; --level4:#3b82f6;
 }
 body[data-theme="sunset"]{
-  --bg:#140b12; --surface:#1d1119; --surface2:#261722; --border:#3a2333;
-  --text:#f7e9ef; --muted:#b48ea2; --accent:#fb923c; --accent2:#f43f5e;
-  --accent-soft: rgba(251,146,60,.16); --weekend:#241621; --weekend-sat:#2e1c29; --weekend-sun:#1a0f18; --holiday:#331a22;
-  --holiday-text:#ff9fb0; --level1:#5b2337; --level2:#8a3a2e; --level3:#c1591f; --level4:#fb923c;
+  --bg:#160f08; --surface:#20160c; --surface2:#33230f; --border:#4a3418;
+  --text:#fbebd9; --muted:#c19a6f; --accent:#fb923c; --accent2:#f59e0b;
+  --accent-soft: rgba(251,146,60,.16); --weekend:#291d10; --weekend-sat:#291d10; --weekend-sun:#180f08; --holiday:#4a1620;
+  --holiday-text:#ff9d9d; --level1:#4a2a0f; --level2:#7a4415; --level3:#c1691f; --level4:#fb923c;
 }
 body[data-theme="sakura"]{
   --bg:#fdf6f8; --surface:#ffffff; --surface2:#fbeef2; --border:#f0d7df;
   --text:#3a2530; --muted:#9c7c88; --accent:#ec4899; --accent2:#db2777;
-  --accent-soft: rgba(236,72,153,.12); --weekend:#fdeef4; --weekend-sat:#fdf3f7; --weekend-sun:#f8dfe9; --holiday:#fff1e6;
-  --holiday-text:#c2621b; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
+  --accent-soft: rgba(236,72,153,.12); --weekend:#f6d9e6; --weekend-sat:#f6d9e6; --weekend-sun:#eebed6; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
 }
 body[data-theme="mono"]{
   --bg:#fafafa; --surface:#ffffff; --surface2:#f0f0f0; --border:#dcdcdc;
   --text:#1a1a1a; --muted:#767676; --accent:#111111; --accent2:#404040;
-  --accent-soft: rgba(0,0,0,.08); --weekend:#f0f0f0; --weekend-sat:#f5f5f5; --weekend-sun:#e6e6e6; --holiday:#f5e9e9;
-  --holiday-text:#8a3a3a; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
+  --accent-soft: rgba(0,0,0,.08); --weekend:#e2e2e2; --weekend-sat:#e2e2e2; --weekend-sun:#cfcfcf; --holiday:#ffe1e1;
+  --holiday-text:#b3261e; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
 }
 body[data-theme="forest"]{
-  --bg:#0e120c; --surface:#161c11; --surface2:#1c2416; --border:#2c3720;
-  --text:#e7edd9; --muted:#8fa07a; --accent:#c9a227; --accent2:#e0b93a;
-  --accent-soft: rgba(201,162,39,.16); --weekend:#1b2314; --weekend-sat:#212b18; --weekend-sun:#141a0e; --holiday:#2a1c14;
-  --holiday-text:#e0a468; --level1:#3a3f1c; --level2:#5c6420; --level3:#8a8f22; --level4:#c9a227;
+  --bg:#120f06; --surface:#1c170a; --surface2:#2e2610; --border:#463a16;
+  --text:#f5eed9; --muted:#b3a06a; --accent:#eab308; --accent2:#f5c518;
+  --accent-soft: rgba(234,179,8,.16); --weekend:#241d0c; --weekend-sat:#241d0c; --weekend-sun:#151105; --holiday:#4a1620;
+  --holiday-text:#ff9d9d; --level1:#4a3d10; --level2:#7a6414; --level3:#b3941a; --level4:#eab308;
 }
 
 *{box-sizing:border-box;}
@@ -102,11 +112,12 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
   width:22px; height:22px; border-radius:50%; border:2px solid var(--border); cursor:pointer; padding:0;
 }
 .swatch[data-theme="mono"]{ background:#ffffff; }
-.swatch[data-theme="terminal"]{ background:#39d353; }
-.swatch[data-theme="ocean"]{ background:#38bdf8; }
+.swatch[data-theme="terminal"]{ background:#2ea043; }
+.swatch[data-theme="ocean"]{ background:#7dd3fc; }
+.swatch[data-theme="azure"]{ background:#3b82f6; }
 .swatch[data-theme="sunset"]{ background:#fb923c; }
 .swatch[data-theme="sakura"]{ background:#ec4899; }
-.swatch[data-theme="forest"]{ background:#c9a227; }
+.swatch[data-theme="forest"]{ background:#eab308; }
 .swatch.active{ border-color:var(--text); transform:scale(1.15); }
 
 /* ---------- YEAR GRID VIEW ---------- */
@@ -253,12 +264,13 @@ footer.hint a{ color:var(--accent); }
       <div class="tb-group">
         <span class="tb-label">Тема</span>
         <div class="swatch-row" id="themeSwatches">
-          <button class="swatch" data-theme="mono" title="Mono (светлая)"></button>
-          <button class="swatch" data-theme="terminal" title="Terminal"></button>
-          <button class="swatch" data-theme="ocean" title="Ocean"></button>
-          <button class="swatch" data-theme="sunset" title="Sunset"></button>
-          <button class="swatch" data-theme="sakura" title="Sakura"></button>
-          <button class="swatch" data-theme="forest" title="Forest"></button>
+          <button class="swatch" data-theme="mono" title="Светлая"></button>
+          <button class="swatch" data-theme="terminal" title="Зелёная"></button>
+          <button class="swatch" data-theme="ocean" title="Голубая"></button>
+          <button class="swatch" data-theme="azure" title="Синяя"></button>
+          <button class="swatch" data-theme="sunset" title="Оранжевая"></button>
+          <button class="swatch" data-theme="sakura" title="Розовая"></button>
+          <button class="swatch" data-theme="forest" title="Жёлтая"></button>
         </div>
       </div>
 
@@ -371,11 +383,35 @@ const HOLIDAYS = {
     [12,16,'День Независимости']
   ]
 };
-function getHoliday(country, month, day){
+/* Пасха по православному календарю (алгоритм Мееуса, юлианский расчёт + перевод в григорианский,
+   корректен для 1900–2099). Радоница — 9-й день после православной Пасхи (это официальный
+   нерабочий праздник в Беларуси, дата которого каждый год разная). */
+function orthodoxEaster(year){
+  const a = year % 4, b = year % 7, c = year % 19;
+  const d = (19*c + 15) % 30;
+  const e = (2*a + 4*b - d + 34) % 7;
+  const month = Math.floor((d + e + 114) / 31); // юлианский календарь: 3=март
+  const day = ((d + e + 114) % 31) + 1;
+  const dt = new Date(Date.UTC(year, month-1, day));
+  dt.setUTCDate(dt.getUTCDate() + 13); // юлианский → григорианский
+  return {month: dt.getUTCMonth()+1, day: dt.getUTCDate()};
+}
+function radonitsaDate(year){
+  const e = orthodoxEaster(year);
+  const dt = new Date(Date.UTC(year, e.month-1, e.day));
+  dt.setUTCDate(dt.getUTCDate() + 9);
+  return {month: dt.getUTCMonth()+1, day: dt.getUTCDate()};
+}
+function getHoliday(country, month, day, year){
   if(country==='none') return null;
   const list = HOLIDAYS[country] || [];
   const found = list.find(h=>h[0]===month && h[1]===day);
-  return found ? found[2] : null;
+  if(found) return found[2];
+  if(country==='by' && year){
+    const r = radonitsaDate(year);
+    if(r.month===month && r.day===day) return 'Радоница';
+  }
+  return null;
 }
 
 /* Страны, законодательство которых НЕ предусматривает перенос выходных,
@@ -487,16 +523,20 @@ function buildMonthCard(year, month){
     const country = state.holidayCountry;
     const forcedWork = country!=='none' && isTransferWork(country, year, month+1, d);
     const forcedOff = country!=='none' && isTransferOff(country, year, month+1, d);
-    if(isWeekendIdx(jsDay) && !forcedWork) cell.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
-    let hname = getHoliday(country, month+1, d);
-    if(!hname && forcedOff) hname='Перенесённый выходной';
-    if(hname) cell.classList.add('holiday');
+    const hname = getHoliday(country, month+1, d, year);
+    if(hname){
+      cell.classList.add('holiday');
+    } else if(forcedOff){
+      cell.classList.add('weekend-sun'); // перенесённый выходной — тёмный, как воскресенье
+    } else if(isWeekendIdx(jsDay) && !forcedWork){
+      cell.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
+    }
     if(key===todayKey()) cell.classList.add('today');
     const prog = dayProgress(key);
     const lvl = levelClass(prog.ratio, prog.total);
     if(lvl) cell.classList.add(lvl);
     if(prog.hasNotes){ const dot=document.createElement('span'); dot.className='note-dot'; cell.appendChild(dot); }
-    cell.title = hname ? hname : (forcedWork ? 'Рабочий день (перенос)' : '');
+    cell.title = hname ? hname : (forcedOff ? 'Перенесённый выходной' : (forcedWork ? 'Рабочий день (перенос)' : ''));
     cell.addEventListener('click', ()=>openModal(key));
     grid.appendChild(cell);
   }
@@ -533,11 +573,16 @@ function renderListView(){
       const country = state.holidayCountry;
       const forcedWork = country!=='none' && isTransferWork(country, state.year, m+1, d);
       const forcedOff = country!=='none' && isTransferOff(country, state.year, m+1, d);
-      if(isWeekendIdx(jsDay) && !forcedWork) row.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
-      let hname = getHoliday(country, m+1, d);
-      if(!hname && forcedOff) hname='Перенесённый выходной';
+      let hname = getHoliday(country, m+1, d, state.year);
+      if(hname){
+        row.classList.add('holiday');
+      } else if(forcedOff){
+        row.classList.add('weekend-sun'); // перенесённый выходной — тёмный, как воскресенье
+        hname = 'Перенесённый выходной';
+      } else if(isWeekendIdx(jsDay) && !forcedWork){
+        row.classList.add(jsDay===6 ? 'weekend-sat' : 'weekend-sun');
+      }
       if(!hname && forcedWork) hname='Рабочий день (перенос)';
-      if(hname && !forcedWork) row.classList.add('holiday');
       if(key===todayKey()) row.style.boxShadow='0 0 0 2px var(--accent) inset';
 
       const num = document.createElement('div'); num.className='list-day-num'; num.textContent=d;
@@ -565,8 +610,13 @@ function renderListView(){
 
 function scrollToToday(){
   const now = new Date();
-  if(state.year !== now.getFullYear()) return;
   requestAnimationFrame(()=>{
+    if(state.year !== now.getFullYear()){
+      // Для не текущего года логичнее показывать начало года (январь), а не сохранять
+      // старую позицию скролла — иначе месяцы визуально "съезжают" и перекрываются.
+      window.scrollTo({top:0, behavior:'smooth'});
+      return;
+    }
     const headerH = document.getElementById('stickyHeader').offsetHeight;
     if(state.viewMode==='grid'){
       const card = document.querySelector(`.month-card[data-month="${now.getMonth()}"]`);
@@ -634,7 +684,7 @@ function openModal(key){
   const weekdayFull = ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'][jsDay];
   document.getElementById('modalDate').textContent = `${d} ${MONTH_NAMES[m-1].toLowerCase()} ${y}, ${weekdayFull}`;
 
-  const hname = getHoliday(state.holidayCountry, m, d);
+  const hname = getHoliday(state.holidayCountry, m, d, y);
   const badgeWrap = document.getElementById('modalHolidayBadge');
   badgeWrap.innerHTML='';
   if(hname){ const b=document.createElement('span'); b.className='holiday-badge'; b.textContent=hname; badgeWrap.appendChild(b); }
