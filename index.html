@@ -23,49 +23,49 @@
 body[data-theme="terminal"]{
   --bg:#f3fbf5; --surface:#ffffff; --surface2:#e8f7ec; --border:#c8e6d0;
   --text:#1e3a28; --muted:#6b9c7c; --cell-text:#1e3a28; --cell-muted:#6b9c7c;
-  --accent:#16a34a; --accent2:#0f7a37;
+  --accent:#16a34a; --accent2:#0f7a37; --on-accent:#f3fbf5;
   --accent-soft: rgba(22,163,74,.12); --weekend:#cdeed9; --weekend-sat:#cdeed9; --weekend-sun:#a9e0bc; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#cdeed9; --level2:#8ddba9; --level3:#3fbd6c; --level4:#16a34a;
 }
 body[data-theme="ocean"]{
   --bg:#f0f9ff; --surface:#ffffff; --surface2:#e0f2fe; --border:#bae6fd;
   --text:#0c3a52; --muted:#5b8fa8; --cell-text:#0c3a52; --cell-muted:#5b8fa8;
-  --accent:#0ea5e9; --accent2:#0284c7;
+  --accent:#0ea5e9; --accent2:#0284c7; --on-accent:#f0f9ff;
   --accent-soft: rgba(14,165,233,.12); --weekend:#b9e3fb; --weekend-sat:#b9e3fb; --weekend-sun:#8ccdf5; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#bae6fd; --level2:#7cd3fa; --level3:#38bdf8; --level4:#0ea5e9;
 }
 body[data-theme="azure"]{
   --bg:#eff4ff; --surface:#ffffff; --surface2:#dbe7fe; --border:#bcd0fb;
   --text:#0f2a5c; --muted:#5b76ad; --cell-text:#0f2a5c; --cell-muted:#5b76ad;
-  --accent:#2563eb; --accent2:#1d4ed8;
+  --accent:#2563eb; --accent2:#1d4ed8; --on-accent:#eff4ff;
   --accent-soft: rgba(37,99,235,.12); --weekend:#c0d4fb; --weekend-sat:#c0d4fb; --weekend-sun:#9bbdf8; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#c0d4fb; --level2:#7ea6f4; --level3:#4a7ff0; --level4:#2563eb;
 }
 body[data-theme="sunset"]{
   --bg:#fff7ed; --surface:#ffffff; --surface2:#ffedd5; --border:#fed7aa;
   --text:#5c2d0c; --muted:#b3805a; --cell-text:#5c2d0c; --cell-muted:#b3805a;
-  --accent:#f97316; --accent2:#ea580c;
+  --accent:#f97316; --accent2:#ea580c; --on-accent:#fff7ed;
   --accent-soft: rgba(249,115,22,.12); --weekend:#fdddb0; --weekend-sat:#fdddb0; --weekend-sun:#fbc383; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#fdddb0; --level2:#fbb765; --level3:#fb923c; --level4:#f97316;
 }
 body[data-theme="sakura"]{
   --bg:#fdf6f8; --surface:#ffffff; --surface2:#fbeef2; --border:#f0d7df;
   --text:#3a2530; --muted:#9c7c88; --cell-text:#3a2530; --cell-muted:#9c7c88;
-  --accent:#ec4899; --accent2:#db2777;
+  --accent:#ec4899; --accent2:#db2777; --on-accent:#fdf6f8;
   --accent-soft: rgba(236,72,153,.12); --weekend:#f6d9e6; --weekend-sat:#f6d9e6; --weekend-sun:#eebed6; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
 }
 body[data-theme="mono"]{
   --bg:#fafafa; --surface:#ffffff; --surface2:#f0f0f0; --border:#dcdcdc;
   --text:#1a1a1a; --muted:#767676; --cell-text:#1a1a1a; --cell-muted:#767676;
-  --accent:#111111; --accent2:#404040;
+  --accent:#404040; --accent2:#5c5c5c; --on-accent:#ffffff;
   --accent-soft: rgba(0,0,0,.08); --weekend:#e2e2e2; --weekend-sat:#e2e2e2; --weekend-sun:#cfcfcf; --holiday:#ffe1e1;
   --holiday-text:#b3261e; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
 }
 body[data-theme="forest"]{
   --bg:#fefce8; --surface:#ffffff; --surface2:#fef3c7; --border:#fde68a;
   --text:#4a3b06; --muted:#a6913f; --cell-text:#4a3b06; --cell-muted:#a6913f;
-  --accent:#eab308; --accent2:#ca8a04;
+  --accent:#eab308; --accent2:#ca8a04; --on-accent:#fefce8;
   --accent-soft: rgba(234,179,8,.12); --weekend:#fce89a; --weekend-sat:#fce89a; --weekend-sun:#f7d55c; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#fce89a; --level2:#f9dd6e; --level3:#f0c419; --level4:#eab308;
 }
@@ -79,6 +79,15 @@ body[data-theme="forest"]{
 body[data-mode="dark"]{
   --bg:#0c1830; --surface:#13294f;
   --text:#eef2fb; --muted:#9fb3d9;
+}
+/* В белой теме акцент — тёмно-серый, на тёмно-синем фоне он сливается с фоном.
+   Поэтому именно для этой комбинации точку и переключатели делаем наоборот:
+   выбрано — белым, не выбрано — серым (в остальных темах акцент цветной,
+   там всё и так хорошо видно на тёмном фоне). */
+body[data-theme="mono"][data-mode="dark"]{
+  --brand-dot:#ffffff;
+  --toggle-active-bg:#ffffff; --toggle-active-text:#1a1a1a;
+  --toggle-inactive-bg:#3a3a3a; --toggle-inactive-text:#e8e8e8;
 }
 
 *{box-sizing:border-box;}
@@ -102,7 +111,7 @@ header.top h1{
   font-family:var(--font-mono); font-size:22px; letter-spacing:-.02em; margin:0;
   display:flex; align-items:center; gap:10px;
 }
-header.top h1 .dot{ width:10px; height:10px; border-radius:3px; background:var(--accent); display:inline-block; }
+header.top h1 .dot{ width:10px; height:10px; border-radius:3px; background:var(--brand-dot, var(--accent)); display:inline-block; }
 header.top p{ margin:0; color:var(--muted); font-size:13px; }
 .mode-row{ display:flex; gap:6px; }
 .mode-swatch{ border-radius:50%; }
@@ -118,12 +127,12 @@ header.top p{ margin:0; color:var(--muted); font-size:13px; }
 .tb-group{ display:flex; align-items:center; gap:6px; }
 .tb-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-right:2px; }
 .btn{
-  font-family:var(--font-sans); font-size:13px; font-weight:500; color:var(--cell-text);
-  background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm);
+  font-family:var(--font-sans); font-size:13px; font-weight:500; color:var(--toggle-inactive-text, var(--cell-text));
+  background:var(--toggle-inactive-bg, var(--surface2)); border:1px solid var(--border); border-radius:var(--radius-sm);
   padding:7px 12px; cursor:pointer; transition:.15s;
 }
 .btn:hover{ border-color:var(--accent); }
-.btn.active{ background:var(--accent); color:var(--bg); border-color:var(--accent); font-weight:600; }
+.btn.active{ background:var(--toggle-active-bg, var(--accent)); color:var(--toggle-active-text, var(--on-accent)); border-color:var(--toggle-active-bg, var(--accent)); font-weight:600; }
 .btn.icon{ padding:7px 10px; display:inline-flex; align-items:center; justify-content:center; }
 select, input[type=number]{
   font-family:var(--font-sans); font-size:13px; color:var(--cell-text); background:var(--surface2);
