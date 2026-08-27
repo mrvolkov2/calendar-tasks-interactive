@@ -89,6 +89,11 @@ body[data-theme="mono"][data-mode="dark"]{
   --toggle-active-bg:#ffffff; --toggle-active-text:#1a1a1a;
   --toggle-inactive-bg:#3a3a3a; --toggle-inactive-text:#e8e8e8;
 }
+/* Кнопки-иконки (стрелки года, экспорт/импорт) не переключаются активно/неактивно —
+   у них нет состояния «выбрано», поэтому им всегда даём белый фон, а не серый. */
+body[data-theme="mono"][data-mode="dark"] .btn.icon{
+  background:#ffffff; color:#1a1a1a; border-color:#ffffff;
+}
 
 *{box-sizing:border-box;}
 body{
