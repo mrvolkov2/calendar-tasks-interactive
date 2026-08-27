@@ -15,51 +15,70 @@
 }
 
 /* ---------- THEMES ----------
-   Идея: цвет темы = цвет календаря (тон фона/ячеек), а не только акцент.
-   Внутри каждой темы будни (surface2) — самые светлые ячейки, суббота чуть темнее,
-   воскресенье — самое тёмное. Праздники всегда красные (--holiday), независимо от темы —
-   это отдельный смысловой статус, не должен путаться с цветом темы. */
+   Единый принцип для всех цветных тем (по образцу «розовой»/«белой»):
+   фон страницы — светлый оттенок цвета темы, карточки месяцев — белые,
+   будни/суббота/воскресенье — тот же цвет темы по нарастанию насыщенности
+   (будни — самые светлые, суббота темнее, воскресенье — темнее всего).
+   Праздники всегда красные — это статус, не цвет темы. */
 body[data-theme="terminal"]{
-  --bg:#0a120c; --surface:#101c14; --surface2:#1a2b1e; --border:#26392b;
-  --text:#e6f0e9; --muted:#84a68f; --accent:#2ea043; --accent2:#3fb950;
-  --accent-soft: rgba(46,160,67,.16); --weekend:#16241a; --weekend-sat:#152316; --weekend-sun:#0d1710; --holiday:#4a1620;
-  --holiday-text:#ff9d9d; --level1:#163a22; --level2:#1f5c30; --level3:#2a8a41; --level4:#2ea043;
+  --bg:#f3fbf5; --surface:#ffffff; --surface2:#e8f7ec; --border:#c8e6d0;
+  --text:#1e3a28; --muted:#6b9c7c; --cell-text:#1e3a28; --cell-muted:#6b9c7c;
+  --accent:#16a34a; --accent2:#0f7a37;
+  --accent-soft: rgba(22,163,74,.12); --weekend:#cdeed9; --weekend-sat:#cdeed9; --weekend-sun:#a9e0bc; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#cdeed9; --level2:#8ddba9; --level3:#3fbd6c; --level4:#16a34a;
 }
 body[data-theme="ocean"]{
-  --bg:#081420; --surface:#0d1f2e; --surface2:#163044; --border:#20415c;
-  --text:#e3f3fb; --muted:#7fa9c2; --accent:#7dd3fc; --accent2:#38bdf8;
-  --accent-soft: rgba(125,211,252,.16); --weekend:#122536; --weekend-sat:#122536; --weekend-sun:#0a1a26; --holiday:#4a1620;
-  --holiday-text:#ff9d9d; --level1:#0d3f56; --level2:#12658a; --level3:#1e97c9; --level4:#38bdf8;
+  --bg:#f0f9ff; --surface:#ffffff; --surface2:#e0f2fe; --border:#bae6fd;
+  --text:#0c3a52; --muted:#5b8fa8; --cell-text:#0c3a52; --cell-muted:#5b8fa8;
+  --accent:#0ea5e9; --accent2:#0284c7;
+  --accent-soft: rgba(14,165,233,.12); --weekend:#b9e3fb; --weekend-sat:#b9e3fb; --weekend-sun:#8ccdf5; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#bae6fd; --level2:#7cd3fa; --level3:#38bdf8; --level4:#0ea5e9;
 }
 body[data-theme="azure"]{
-  --bg:#060b16; --surface:#0a1226; --surface2:#142a52; --border:#1f3766;
-  --text:#e5edfb; --muted:#7f92b8; --accent:#3b82f6; --accent2:#60a5fa;
-  --accent-soft: rgba(59,130,246,.16); --weekend:#0f1c38; --weekend-sat:#0f1c38; --weekend-sun:#080f22; --holiday:#4a1620;
-  --holiday-text:#ff9d9d; --level1:#122a52; --level2:#1b3f7a; --level3:#2a5bb0; --level4:#3b82f6;
+  --bg:#eff4ff; --surface:#ffffff; --surface2:#dbe7fe; --border:#bcd0fb;
+  --text:#0f2a5c; --muted:#5b76ad; --cell-text:#0f2a5c; --cell-muted:#5b76ad;
+  --accent:#2563eb; --accent2:#1d4ed8;
+  --accent-soft: rgba(37,99,235,.12); --weekend:#c0d4fb; --weekend-sat:#c0d4fb; --weekend-sun:#9bbdf8; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#c0d4fb; --level2:#7ea6f4; --level3:#4a7ff0; --level4:#2563eb;
 }
 body[data-theme="sunset"]{
-  --bg:#160f08; --surface:#20160c; --surface2:#33230f; --border:#4a3418;
-  --text:#fbebd9; --muted:#c19a6f; --accent:#fb923c; --accent2:#f59e0b;
-  --accent-soft: rgba(251,146,60,.16); --weekend:#291d10; --weekend-sat:#291d10; --weekend-sun:#180f08; --holiday:#4a1620;
-  --holiday-text:#ff9d9d; --level1:#4a2a0f; --level2:#7a4415; --level3:#c1691f; --level4:#fb923c;
+  --bg:#fff7ed; --surface:#ffffff; --surface2:#ffedd5; --border:#fed7aa;
+  --text:#5c2d0c; --muted:#b3805a; --cell-text:#5c2d0c; --cell-muted:#b3805a;
+  --accent:#f97316; --accent2:#ea580c;
+  --accent-soft: rgba(249,115,22,.12); --weekend:#fdddb0; --weekend-sat:#fdddb0; --weekend-sun:#fbc383; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#fdddb0; --level2:#fbb765; --level3:#fb923c; --level4:#f97316;
 }
 body[data-theme="sakura"]{
   --bg:#fdf6f8; --surface:#ffffff; --surface2:#fbeef2; --border:#f0d7df;
-  --text:#3a2530; --muted:#9c7c88; --accent:#ec4899; --accent2:#db2777;
+  --text:#3a2530; --muted:#9c7c88; --cell-text:#3a2530; --cell-muted:#9c7c88;
+  --accent:#ec4899; --accent2:#db2777;
   --accent-soft: rgba(236,72,153,.12); --weekend:#f6d9e6; --weekend-sat:#f6d9e6; --weekend-sun:#eebed6; --holiday:#ffe1e1;
   --holiday-text:#c81e3f; --level1:#fbd3e6; --level2:#f5a8cf; --level3:#ef6fb3; --level4:#ec4899;
 }
 body[data-theme="mono"]{
   --bg:#fafafa; --surface:#ffffff; --surface2:#f0f0f0; --border:#dcdcdc;
-  --text:#1a1a1a; --muted:#767676; --accent:#111111; --accent2:#404040;
+  --text:#1a1a1a; --muted:#767676; --cell-text:#1a1a1a; --cell-muted:#767676;
+  --accent:#111111; --accent2:#404040;
   --accent-soft: rgba(0,0,0,.08); --weekend:#e2e2e2; --weekend-sat:#e2e2e2; --weekend-sun:#cfcfcf; --holiday:#ffe1e1;
   --holiday-text:#b3261e; --level1:#c9c9c9; --level2:#9a9a9a; --level3:#5a5a5a; --level4:#111111;
 }
 body[data-theme="forest"]{
-  --bg:#120f06; --surface:#1c170a; --surface2:#2e2610; --border:#463a16;
-  --text:#f5eed9; --muted:#b3a06a; --accent:#eab308; --accent2:#f5c518;
-  --accent-soft: rgba(234,179,8,.16); --weekend:#241d0c; --weekend-sat:#241d0c; --weekend-sun:#151105; --holiday:#4a1620;
-  --holiday-text:#ff9d9d; --level1:#4a3d10; --level2:#7a6414; --level3:#b3941a; --level4:#eab308;
+  --bg:#fefce8; --surface:#ffffff; --surface2:#fef3c7; --border:#fde68a;
+  --text:#4a3b06; --muted:#a6913f; --cell-text:#4a3b06; --cell-muted:#a6913f;
+  --accent:#eab308; --accent2:#ca8a04;
+  --accent-soft: rgba(234,179,8,.12); --weekend:#fce89a; --weekend-sat:#fce89a; --weekend-sun:#f7d55c; --holiday:#ffe1e1;
+  --holiday-text:#c81e3f; --level1:#fce89a; --level2:#f9dd6e; --level3:#f0c419; --level4:#eab308;
+}
+
+/* ---------- DARK MODE (переключатель фона рядом с «Планёр») ----------
+   Меняются фон страницы, фон карточек (тулбар/карточки месяцев/модалка) и «хромовый»
+   текст, который лежит прямо на этих фонах (заголовки, подписи, кнопки, поля ввода).
+   А вот цвет самих ячеек дней/будни-выходные и текст НА них (--cell-text/--cell-muted)
+   не меняется — у ячеек всегда свой светлый фон темы, поэтому цифры дат остаются
+   читаемыми тёмным текстом темы, как в светлом режиме. */
+body[data-mode="dark"]{
+  --bg:#0c1830; --surface:#13294f;
+  --text:#eef2fb; --muted:#9fb3d9;
 }
 
 *{box-sizing:border-box;}
@@ -78,12 +97,17 @@ body{
 }
 
 header.top{ display:flex; flex-direction:column; gap:4px; }
+.top-row{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
 header.top h1{
   font-family:var(--font-mono); font-size:22px; letter-spacing:-.02em; margin:0;
   display:flex; align-items:center; gap:10px;
 }
 header.top h1 .dot{ width:10px; height:10px; border-radius:3px; background:var(--accent); display:inline-block; }
 header.top p{ margin:0; color:var(--muted); font-size:13px; }
+.mode-row{ display:flex; gap:6px; }
+.mode-swatch{ border-radius:50%; }
+.mode-swatch[data-mode="light"]{ background:#ffffff; }
+.mode-swatch[data-mode="dark"]{ background:#0c1830; }
 
 /* ---------- TOOLBAR ---------- */
 .toolbar{
@@ -94,7 +118,7 @@ header.top p{ margin:0; color:var(--muted); font-size:13px; }
 .tb-group{ display:flex; align-items:center; gap:6px; }
 .tb-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-right:2px; }
 .btn{
-  font-family:var(--font-sans); font-size:13px; font-weight:500; color:var(--text);
+  font-family:var(--font-sans); font-size:13px; font-weight:500; color:var(--cell-text);
   background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm);
   padding:7px 12px; cursor:pointer; transition:.15s;
 }
@@ -102,7 +126,7 @@ header.top p{ margin:0; color:var(--muted); font-size:13px; }
 .btn.active{ background:var(--accent); color:var(--bg); border-color:var(--accent); font-weight:600; }
 .btn.icon{ padding:7px 10px; display:inline-flex; align-items:center; justify-content:center; }
 select, input[type=number]{
-  font-family:var(--font-sans); font-size:13px; color:var(--text); background:var(--surface2);
+  font-family:var(--font-sans); font-size:13px; color:var(--cell-text); background:var(--surface2);
   border:1px solid var(--border); border-radius:var(--radius-sm); padding:7px 10px; cursor:pointer;
 }
 input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
@@ -112,10 +136,10 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
   width:22px; height:22px; border-radius:50%; border:2px solid var(--border); cursor:pointer; padding:0;
 }
 .swatch[data-theme="mono"]{ background:#ffffff; }
-.swatch[data-theme="terminal"]{ background:#2ea043; }
-.swatch[data-theme="ocean"]{ background:#7dd3fc; }
-.swatch[data-theme="azure"]{ background:#3b82f6; }
-.swatch[data-theme="sunset"]{ background:#fb923c; }
+.swatch[data-theme="terminal"]{ background:#16a34a; }
+.swatch[data-theme="ocean"]{ background:#0ea5e9; }
+.swatch[data-theme="azure"]{ background:#2563eb; }
+.swatch[data-theme="sunset"]{ background:#f97316; }
 .swatch[data-theme="sakura"]{ background:#ec4899; }
 .swatch[data-theme="forest"]{ background:#eab308; }
 .swatch.active{ border-color:var(--text); transform:scale(1.15); }
@@ -137,7 +161,7 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 .day-cell{
   aspect-ratio:1/1; border-radius:5px; border:1px solid transparent; background:var(--surface2);
   display:flex; align-items:center; justify-content:center; position:relative; cursor:pointer;
-  font-family:var(--font-mono); font-size:11px; color:var(--text); transition:.12s;
+  font-family:var(--font-mono); font-size:11px; color:var(--cell-text); transition:.12s;
 }
 .day-cell:hover{ border-color:var(--accent); }
 .day-cell.empty{ visibility:hidden; cursor:default; }
@@ -160,7 +184,7 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
   letter-spacing:.06em; color:var(--muted); margin:14px 0 4px; padding-left:4px;
 }
 .list-day-row{
-  display:flex; align-items:center; gap:12px; background:var(--surface); border:1px solid var(--border);
+  display:flex; align-items:center; gap:12px; background:var(--surface2); border:1px solid var(--border); color:var(--cell-text);
   border-radius:var(--radius-sm); padding:9px 12px; cursor:pointer; margin-bottom:6px; transition:.12s;
 }
 .list-day-row:hover{ border-color:var(--accent); }
@@ -169,11 +193,11 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 .list-day-row.weekend-sun{ background:var(--weekend-sun); }
 .list-day-row.holiday{ background:var(--holiday); }
 .list-day-num{ font-family:var(--font-mono); font-weight:700; font-size:15px; width:28px; text-align:center; }
-.list-day-dow{ font-family:var(--font-mono); font-size:11px; color:var(--muted); width:24px; }
+.list-day-dow{ font-family:var(--font-mono); font-size:11px; color:var(--cell-muted); width:24px; }
 .list-day-holiday-name{ font-size:11px; color:var(--holiday-text); flex:0 0 auto; }
 .list-day-progress{ flex:1; height:6px; background:var(--surface2); border-radius:3px; overflow:hidden; }
 .list-day-progress i{ display:block; height:100%; background:var(--accent); }
-.list-day-meta{ display:flex; align-items:center; gap:6px; color:var(--muted); font-size:11px; font-family:var(--font-mono); }
+.list-day-meta{ display:flex; align-items:center; gap:6px; color:var(--cell-muted); font-size:11px; font-family:var(--font-mono); }
 
 /* ---------- MODAL ---------- */
 .overlay{
@@ -194,9 +218,9 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 .plan-item{ display:flex; align-items:center; gap:8px; }
 .plan-item input[type=text]{
   flex:1; background:var(--surface2); border:1px solid var(--border); border-radius:var(--radius-sm);
-  color:var(--text); font-family:var(--font-sans); font-size:13px; padding:8px 10px;
+  color:var(--cell-text); font-family:var(--font-sans); font-size:13px; padding:8px 10px;
 }
-.plan-item input[type=text].done{ text-decoration:line-through; color:var(--muted); }
+.plan-item input[type=text].done{ text-decoration:line-through; color:var(--cell-muted); }
 .plan-item input[type=checkbox]{ width:17px; height:17px; accent-color:var(--accent); cursor:pointer; }
 .plan-item .del{ background:none; border:none; color:var(--muted); font-size:16px; cursor:pointer; padding:2px 6px; }
 .plan-item .del:hover{ color:var(--holiday-text); }
@@ -204,7 +228,7 @@ input[type=number]{ width:76px; font-family:var(--font-mono); cursor:text; }
 
 textarea{
   width:100%; min-height:90px; resize:vertical; background:var(--surface2); border:1px solid var(--border);
-  border-radius:var(--radius-sm); color:var(--text); font-family:var(--font-sans); font-size:13px; padding:10px;
+  border-radius:var(--radius-sm); color:var(--cell-text); font-family:var(--font-sans); font-size:13px; padding:10px;
 }
 label.field-label{ font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
 .modal-footer{ display:flex; justify-content:space-between; gap:8px; }
@@ -224,7 +248,13 @@ footer.hint a{ color:var(--accent); }
 
   <div id="stickyHeader" class="sticky-header">
     <header class="top">
-      <h1><span class="dot"></span>Планёр</h1>
+      <div class="top-row">
+        <h1><span class="dot"></span>Планёр</h1>
+        <div class="mode-row" id="modeSwatches">
+          <button class="swatch mode-swatch" data-mode="light" title="Светлый фон карточек"></button>
+          <button class="swatch mode-swatch" data-mode="dark" title="Тёмный фон карточек"></button>
+        </div>
+      </div>
       <p>Годовой календарь: планы, отметки о выполнении и заметки на каждый день</p>
     </header>
 
@@ -335,7 +365,7 @@ function loadState(){
   else if(memoryFallback){ raw = memoryFallback; }
   if(raw){ try{ return JSON.parse(raw); }catch(e){} }
   return {
-    theme:'mono', weekStart:'mon', viewMode:'grid', holidayCountry:'none',
+    theme:'mono', mode:'light', weekStart:'mon', viewMode:'grid', holidayCountry:'none',
     year: new Date().getFullYear(), days:{}
   };
 }
@@ -346,6 +376,7 @@ function saveState(){
 }
 
 let state = loadState();
+if(!state.mode) state.mode = 'light';
 
 /* ================= HOLIDAYS (базовые фиксированные даты) ================= */
 const HOLIDAYS = {
@@ -637,6 +668,7 @@ function scrollToToday(){
 function render(opts){
   opts = opts || {};
   document.body.setAttribute('data-theme', state.theme);
+  document.body.setAttribute('data-mode', state.mode);
   document.getElementById('yearInput').value = state.year;
   document.getElementById('holidaySelect').value = state.holidayCountry;
 
@@ -645,8 +677,11 @@ function render(opts){
   document.getElementById('weekMon').classList.toggle('active', state.weekStart==='mon');
   document.getElementById('weekSun').classList.toggle('active', state.weekStart==='sun');
 
-  document.querySelectorAll('.swatch').forEach(s=>{
+  document.querySelectorAll('.swatch[data-theme]').forEach(s=>{
     s.classList.toggle('active', s.dataset.theme===state.theme);
+  });
+  document.querySelectorAll('.mode-swatch').forEach(s=>{
+    s.classList.toggle('active', s.dataset.mode===state.mode);
   });
 
   if(state.viewMode==='grid') renderGridView(); else renderListView();
@@ -767,6 +802,12 @@ document.getElementById('themeSwatches').addEventListener('click', (e)=>{
   const btn = e.target.closest('.swatch');
   if(!btn) return;
   state.theme = btn.dataset.theme; saveState(); render();
+});
+
+document.getElementById('modeSwatches').addEventListener('click', (e)=>{
+  const btn = e.target.closest('.mode-swatch');
+  if(!btn) return;
+  state.mode = btn.dataset.mode; saveState(); render();
 });
 
 document.getElementById('exportBtn').addEventListener('click', ()=>{
