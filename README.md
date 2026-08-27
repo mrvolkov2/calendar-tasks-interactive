@@ -38,12 +38,9 @@ https://mrvolkov2.github.io/calendar-tasks-interactive/
 
 ---
 
+## 📍 Чт
 
----
-
-## 📍 Ср
-
-**26.08.2026, среда**
+**26.08.2026, четверг**
 
 - [ ] задача 1
 
