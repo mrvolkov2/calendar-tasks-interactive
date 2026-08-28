@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=180&section=header&text=Мой%20дневник&fontSize=45&fontColor=ffffff&animation=fadeIn&desc=заметки%20·%20планы%20·%20календарь&descAlignY=60" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=180&section=header&text=Дневник%20разработки&fontSize=45&fontColor=ffffff&animation=fadeIn&desc=заметки%20·%20планы%20·%20календарь&descAlignY=60" width="100%"/>
 
 <a href="#">
   <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=6C5CE7&center=true&vCenter=true&width=500&lines=Каждый+день+заметка;Каждый+день+коммит;Зелёный+график+%F0%9F%9F%A9" alt="Typing SVG" />
