@@ -25,6 +25,7 @@ https://mrvolkov2.github.io/calendar-tasks-interactive/
 [16 ГБ оперативы]
 Ollama и LM Studio, Q4, Q6, Q8; Gemma4 12B; Qwen3.5 9B.
 Для Ollama и WebUI нужен Docker - при первой установке долгая настройка Docker.
+(когда разберусь с локальными ИИ, попробовать подключить ИИ к VS Code - облачные и локальные, может gemmma от Ollama подключится без VPN?)
 
 💭 Мысль дня: Ollama - есть облачный чат, Gemma работает без VPN.
 
