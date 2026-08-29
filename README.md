@@ -1,17 +1,21 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=130&section=header&text=Дневник%20разработки&fontSize=24&fontColor=ffffff&fontAlignY=40&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=150&section=header&text=Дневник%20разработки&fontSize=42&fontColor=ffffff&fontAlignY=40&animation=fadeIn" width="100%"/>
 
-### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
+### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;[![календарь](https://img.shields.io/badge/📅_календарь-000000?style=flat-square&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 ![Streak](https://img.shields.io/badge/дней%20подряд-9-6C5CE7?style=for-the-badge)
 ![Last update](https://img.shields.io/badge/обновлено-29.08.2026-00CEC9?style=for-the-badge)
 
 </div>
 
+<div align="center">
+
 ### 🔗 Полезные ссылки
 
 [![Открыть онлайн календарь](https://img.shields.io/badge/🗓️_Открыть_онлайн_календарь-6C5CE7?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 [![MrVolkov2 GitHub](https://img.shields.io/badge/MrVolkov2-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrvolkov2)
+
+</div>
 
 <br/>
 
