@@ -1,19 +1,19 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=180&section=header&text=Дневник%20разработки&fontSize=45&fontColor=ffffff&animation=fadeIn&desc=заметки%20·%20планы%20·%20календарь&descAlignY=60" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=150&section=header&text=Дневник%20разработки&fontSize=42&fontColor=ffffff&animation=fadeIn" width="100%"/>
 
-<a href="#">
-  <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=20&pause=1000&color=6C5CE7&center=true&vCenter=true&width=500&lines=Каждый+день+заметка;Каждый+день+коммит;Зелёный+график+%F0%9F%9F%A9" alt="Typing SVG" />
-</a>
+<sub>📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;календарь</sub>
+
+<br/><br/>
 
 ![Streak](https://img.shields.io/badge/дней%20подряд-считай%20сам-6C5CE7?style=for-the-badge)
 ![Last update](https://img.shields.io/badge/обновлено-25.08.2026-00CEC9?style=for-the-badge)
 
+<br/>
+
+[![Открыть онлайн календарь](https://img.shields.io/badge/🗓️_Открыть_онлайн_календарь-mrvolkov2.github.io-00CEC9?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
+
 </div>
-
-
-ссылка на онлайн календарь:
-https://mrvolkov2.github.io/calendar-tasks-interactive/
 
 ---
 
@@ -25,7 +25,6 @@ https://mrvolkov2.github.io/calendar-tasks-interactive/
 [16 ГБ оперативы]
 Ollama и LM Studio, Q4, Q6, Q8; Gemma4 12B; Qwen3.5 9B.
 Для Ollama и WebUI нужен Docker - при первой установке долгая настройка Docker.
-(когда разберусь с локальными ИИ, попробовать подключить ИИ к VS Code - облачные и локальные, может gemmma от Ollama подключится без VPN?)
 
 💭 Мысль дня: Ollama - есть облачный чат, Gemma работает без VPN.
 
@@ -127,7 +126,9 @@ Ollama и LM Studio, Q4, Q6, Q8; Gemma4 12B; Qwen3.5 9B.
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=твой-ник&theme=radical&hide_border=true" alt="streak stats"/>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=mrvolkov2&theme=radical&hide_border=true" alt="streak stats"/>
+
+<sub>эта статистика считает коммиты по всему GitHub-профилю, а не только по этому репозиторию</sub>
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00CEC9,100:6C5CE7&height=100&section=footer"/>
 
