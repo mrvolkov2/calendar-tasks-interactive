@@ -1,5 +1,7 @@
 <div align="center">
+
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=130&section=header&text=Дневник%20разработки&fontSize=24&fontColor=ffffff&fontAlignY=40&animation=fadeIn" width="100%"/>
+
 ### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;календарь
 ![Streak](https://img.shields.io/badge/дней%20подряд-считай%20сам-6C5CE7?style=for-the-badge)
 ![Last update](https://img.shields.io/badge/обновлено-25.08.2026-00CEC9?style=for-the-badge)
