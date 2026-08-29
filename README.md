@@ -11,6 +11,10 @@
 
 </div>
 
+
+ссылка на онлайн календарь:
+https://mrvolkov2.github.io/calendar-tasks-interactive/
+
 ---
 
 ## 📍 Сб
@@ -61,9 +65,6 @@ Ollama и LM Studio, Q4, Q6, Q8; Gemma4 12B; Qwen3.5 9B.
 💭 Мысль дня: myrating.autos: попробовать простой ИИ вывод (1-2 вечера) или начать формировать структуру базы данных (гугл таблицы ?)
 
 ---
-
-ссылка на онлайн календарь:
-https://mrvolkov2.github.io/calendar-tasks-interactive/
 
 ## 📍 Вт
 
