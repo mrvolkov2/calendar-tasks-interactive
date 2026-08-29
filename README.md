@@ -2,10 +2,9 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=130&section=header&text=Дневник%20разработки&fontSize=24&fontColor=ffffff&fontAlignY=40&animation=fadeIn" width="100%"/>
 
-### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;календарь
+### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 ![Streak](https://img.shields.io/badge/дней%20подряд-считай%20сам-6C5CE7?style=for-the-badge)
 ![Last update](https://img.shields.io/badge/обновлено-25.08.2026-00CEC9?style=for-the-badge)
-[![Открыть онлайн календарь](https://img.shields.io/badge/🗓️_Открыть_онлайн_календарь-mrvolkov2.github.io-00CEC9?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 
 </div>
 
@@ -120,7 +119,14 @@ Ollama и LM Studio, Q4, Q6, Q8; Gemma4 12B; Qwen3.5 9B.
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=mrvolkov2&theme=radical&hide_border=true" alt="streak stats"/>
+### 🔗 Полезные ссылки
+
+[![Открыть онлайн календарь](https://img.shields.io/badge/🗓️_Открыть_онлайн_календарь-6C5CE7?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
+[![MrVolkov2 GitHub](https://img.shields.io/badge/MrVolkov2-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrvolkov2)
+
+<br/>
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=mrvolkov2&theme=default&hide_border=true&background=FFFFFF" alt="streak stats"/>
 
 <sub>эта статистика считает коммиты по всему GitHub-профилю, а не только по этому репозиторию</sub>
 
