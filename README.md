@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=100&section=header&text=Дневник%20разработки&fontSize=36&fontColor=ffffff&fontAlignY=45&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=140&section=header&text=Дневник%20разработки&fontSize=36&fontColor=ffffff&fontAlignY=32&animation=fadeIn" width="100%"/>
 
 ### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 ![Streak](https://img.shields.io/badge/дней%20подряд-9-6C5CE7?style=for-the-badge)
