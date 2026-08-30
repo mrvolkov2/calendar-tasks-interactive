@@ -8,12 +8,6 @@
 
 </div>
 
-[![Заметки](https://img.shields.io/badge/📝_заметки-2D3748?style=flat-square)](#)
-[![Планы](https://img.shields.io/badge/🗂️_планы-2D3748?style=flat-square)](#)
-[![Календарь](https://img.shields.io/badge/📅_календарь-4C51BF?style=flat-square)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
-
-
-
 <div align="center">
 
 ### 🔗 Полезные ссылки
