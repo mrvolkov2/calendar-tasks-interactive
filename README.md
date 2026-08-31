@@ -4,7 +4,7 @@
 
 ### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 ![Streak](https://img.shields.io/badge/дней%20подряд-♾️🔥-2D3748?style=for-the-badge)
-![Last update](https://img.shields.io/badge/обновлено-30.08.2026-2D3748?style=for-the-badge)
+![Last update](https://img.shields.io/badge/обновлено-31.08.2026-2D3748?style=for-the-badge)
 
 </div>
 
