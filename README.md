@@ -1,18 +1,18 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=140&section=header&text=Дневник%20разработки&fontSize=36&fontColor=ffffff&fontAlignY=32&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:6C5CE7,100:00CEC9&height=140&section=header&text=DevLog&fontSize=36&fontColor=ffffff&fontAlignY=32&animation=fadeIn" width="100%"/>
 
-### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
-![Streak](https://img.shields.io/badge/дней%20подряд-♾️🔥-2D3748?style=for-the-badge)
-![Last update](https://img.shields.io/badge/обновлено-08.09.2026-2D3748?style=for-the-badge)
+### 📝&nbsp;notes&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;plans&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[calendar](https://mrvolkov2.github.io/calendar-tasks-interactive/)
+![Streak](https://img.shields.io/badge/day%20streak-♾️🔥-2D3748?style=for-the-badge)
+![Last update](https://img.shields.io/badge/updated-08.09.2026-2D3748?style=for-the-badge)
 
 </div>
 
 <div align="center">
 
-### 🔗 Полезные ссылки
+### 🔗 Useful Links
 
-[![Открыть онлайн календарь](https://img.shields.io/badge/🗓️_Открыть_онлайн_календарь-6C5CE7?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
+[![Open Online Calendar](https://img.shields.io/badge/🗓️_Open_Online_Calendar-6C5CE7?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 [![MrVolkov2 GitHub](https://img.shields.io/badge/MrVolkov2-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrvolkov2)
 
 </div>
