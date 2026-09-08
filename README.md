@@ -4,7 +4,7 @@
 
 ### 📝&nbsp;заметки&nbsp;&nbsp;·&nbsp;&nbsp;🗂️&nbsp;планы&nbsp;&nbsp;·&nbsp;&nbsp;📅&nbsp;[календарь](https://mrvolkov2.github.io/calendar-tasks-interactive/)
 ![Streak](https://img.shields.io/badge/дней%20подряд-♾️🔥-2D3748?style=for-the-badge)
-![Last update](https://img.shields.io/badge/обновлено-07.09.2026-2D3748?style=for-the-badge)
+![Last update](https://img.shields.io/badge/обновлено-08.09.2026-2D3748?style=for-the-badge)
 
 </div>
 
@@ -29,10 +29,15 @@
 | 21 | 22 | 23 | 24 | 25 | 26 | 27 |
 | 28 | 29 | 30 |    |    |    |    |
 
-⏳**01.09.2026, пн**
-- 🎯 Start migration encyclopedia to mysql
+⏳**08.09.2026, пн**
+- 🎯 Started a new encyclopedia with a new structure.
 
-💭 Мысль дня: посмотрим что займёт больше времени, переезд или заполнение.
+💭 Thought of the day: testing: uploaded the initial set of cars to the encyclopedia, configured pages.
+
+⏳**01.09.2026, пн**
+- 🎯 Start migration the encyclopedia to mysql.
+
+💭 Thought of the day: let's see what takes longer: the migration or Content filling.
 
 ---
 
