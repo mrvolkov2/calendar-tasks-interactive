@@ -19,9 +19,9 @@
 
 <br/>
 
-## 🗓️ Сентябрь 2026
+## 🗓️ September 2026
 
-| Пн | Вт | Ср | Чт | Пт | Сб | Вс |
+| Mo | Tu | We | Th | Fr | Sa | Su |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 |    | 1  | 2  | 3  | 4  | 5  | 6  |
 | 7  | 8  | 9  | 10 | 11 | 12 | 13 |
@@ -29,12 +29,12 @@
 | 21 | 22 | 23 | 24 | 25 | 26 | 27 |
 | 28 | 29 | 30 |    |    |    |    |
 
-⏳**08.09.2026, пн**
+⏳**08.09.2026, Tu**
 - 🎯 Started a new encyclopedia with a new structure.
 
 💭 Thought of the day: testing: uploaded the initial set of cars to the encyclopedia, configured pages.
 
-⏳**01.09.2026, пн**
+⏳**01.09.2026, Tu**
 - 🎯 Start migration the encyclopedia to mysql.
 
 💭 Thought of the day: let's see what takes longer: the migration or Content filling.
