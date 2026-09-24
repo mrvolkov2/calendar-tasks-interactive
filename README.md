@@ -33,8 +33,8 @@
 - 🎯 add news on myrating.autos. Funny about road-heroes.
   
 # 📍 Plans
-- [ ] Отдельный репозиторий на расчет рейтинга (подключается через версии гитхаб).
-- [ ] Отдельный репозиторий ИИ поик (будет удобно править, чтобы не редеплоить весь проект).
+- [ ] Separate repository for rating calculator (connect thru github versions).
+- [ ] Separete repository for an AI searc (comfortable for non-deploying the all project when changing).
 
 💭 Thought of the day: giant plans: mobile app, connect telegram bot to github, youtube channel, try video generation.
 Whyle 1st sept. and two weeks holidays, forgot where stop in telegram bot, next time finish idea realisation or commit where stop and what need to do.
