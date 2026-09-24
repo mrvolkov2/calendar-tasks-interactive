@@ -29,6 +29,16 @@
 | 21 | 22 | 23 | 24 | 25 | 26 | 27 |
 | 28 | 29 | 30 |    |    |    |    |
 
+⏳**24.09.2026, Th**
+- 🎯 add news on myrating.autos. Funny about road-heroes.
+  
+# 📍 Plans
+- [ ] Отдельный репозиторий на расчет рейтинга (подключается через версии гитхаб).
+- [ ] Отдельный репозиторий ИИ поик (будет удобно править, чтобы не редеплоить весь проект).
+
+💭 Thought of the day: giant plans: mobile app, connect telegram bot to github, youtube channel, try video generation.
+Whyle 1st sept. and two weeks holidays, forgot where stop in telegram bot, next time finish idea realisation or commit where stop and what need to do.
+
 ⏳**08.09.2026, Tu**
 - 🎯 Started a new encyclopedia with a new structure.
 
