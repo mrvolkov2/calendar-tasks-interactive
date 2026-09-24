@@ -32,7 +32,7 @@
 ⏳**24.09.2026, Th**
 - 🎯 add news on myrating.autos. Funny about road-heroes.
   
-# 📍 Plans
+##📍 Plans
 - [ ] Separate repository for rating calculator (connect thru github versions).
 - [ ] Separete repository for an AI searc (comfortable for non-deploying the all project when changing).
 
