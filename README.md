@@ -30,6 +30,17 @@
 | 19 | 20 | 21 | 22 | 23 | 24 | 25 |
 | 26 | 27 | 28 | 29 | 30 | 31 |    |
 
+⏳**28.10.2026, Th**
+- 🎯 Created design and launched website RealPhysics ([codlod.com/realphysics](https://codlod.com/realphysics)).
+
+## 📍 Plans (Release to Production)
+- [ ] New design for MyRating Autos (design created, optimizing for the website).
+- [ ] Launch bicycle portal "VeloPipec" (design created, working on news & content uploading).
+  
+💭 Thought of the day: Когда проектов становится больше, каждый новый релиз — это не просто строчка в портфолио, а еще один кирпичик в собственной цифровой экосистеме. Двигаемся дальше!
+Заметио, что уже тяжело в голове удержать, какие проекты разработаны. Думаем о расширении.
+
+
 ⏳**01.10.2026, Th**
 - 🎯 Created a YouTube channel.
 - 🎯 Added social media links on the website.
