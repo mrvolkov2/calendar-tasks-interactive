@@ -31,7 +31,7 @@
 | 26 | 27 | 28 | 29 | 30 | 31 |    |
 
 ⏳**28.10.2026, Th**
-- 🎯 Created design and launched website RealPhysics ([codlod.com/realphysics](https://codlod.com/realphysics)).
+- 🎯 Created design and launched website RealPhysic ([codlod.com/realphysics](https://codlod.com/realphysics)).
 
 ## 📍 Plans (Release to Production)
 - [ ] New design for MyRating Autos (design created, optimizing for the website).
