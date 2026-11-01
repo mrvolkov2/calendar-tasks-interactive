@@ -17,7 +17,7 @@
 
 <!-- ROW 1: CALENDAR + PLANS -->
 <tr>
-<td width="55%" valign="top style="padding-bottom: 20px;">
+<td width="55%" valign="top" style="padding-bottom: 20px;">
 
 <h3 align="center">🗓️ Календарь</h3>
 
