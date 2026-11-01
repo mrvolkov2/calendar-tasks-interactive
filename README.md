@@ -123,7 +123,6 @@
 
 - [ ] Новый проект VeloPipec — загрузить на codlod.com.
 <br>
-<br>
 
 <h3 align="center">📌 Фокус месяца</h3>
 
