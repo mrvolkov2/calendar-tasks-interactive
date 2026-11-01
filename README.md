@@ -164,8 +164,6 @@
 </tr>
 </table>
 
----
-
 <p align="center">
   🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
   <br>
