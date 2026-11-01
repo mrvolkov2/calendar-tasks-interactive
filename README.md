@@ -39,7 +39,6 @@
 </table>
 
 <div>&nbsp;</div>
-<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -54,7 +53,6 @@
 
 - [ ] Новый проект VeloPipec — загрузить на codlod.com.
 
-<div>&nbsp;</div>
 <div>&nbsp;</div>
 
 </td>
@@ -72,7 +70,6 @@
 - ✨ **Девиз:** маленькие шаги — большие перемены
 
 <div>&nbsp;</div>
-<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -84,7 +81,6 @@
 - 🎨 Работа над дизайном и интерфейсами.
 - ⚙️ Улучшение архитектуры проектов.
 
-<div>&nbsp;</div>
 <div>&nbsp;</div>
 
 </td>
@@ -111,7 +107,6 @@
 </table>
 
 <div>&nbsp;</div>
-<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -122,7 +117,6 @@
 
 - [ ] Add new design for main page MyRating.
 
-<div>&nbsp;</div>
 <div>&nbsp;</div>
 
 </td>
@@ -138,7 +132,6 @@
 - 
 - 
 
-<div>&nbsp;</div>
 <div>&nbsp;</div>
 
 </td>
@@ -161,7 +154,6 @@
 </table>
 
 <div>&nbsp;</div>
-<div>&nbsp;</div>
 
 </td>
 </tr>
@@ -179,7 +171,6 @@
 </p>
 
 <div>&nbsp;</div>
-<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -190,7 +181,6 @@
 - 💡 Новые идеи.
 - 🚀 Движение вперёд.
 
-<div>&nbsp;</div>
 <div>&nbsp;</div>
 
 </td>
