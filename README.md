@@ -41,9 +41,12 @@
 - 📚 **Цель:** больше времени для себя
 - ✨ **Девиз:** маленькие шаги — большие перемены
 
+🎯 Created design VeloPipec. Plans - add news and produstion on codlod.com.
+🎯 Add new design for main page MyRating.
+
 ### 📝 Мои планы на ноябрь
 
-- [ ] Довести до умна дизайн MyRating.
+- [ ] Новый дизайн для остальных страниц MyRating).
 - [ ] Попробовать 3D motion на странице энциклопедии.
 - [ ] Навести порядок в базе данных.
 - [ ] Новый проект - VeloPipec - загрузить на codlod.com.
@@ -57,7 +60,7 @@
 |  |  |
 |  |  |
 
-01.11.2026 - 🎯 Created design VeloPipec. Plans - add news and produstion on codlod.com
+
 
 ---
 
