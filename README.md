@@ -22,11 +22,13 @@
 > *«Осень — это время собирать тёплые моменты, даже когда за окном холодно»* ☕️
 
 <table>
+<tbody>
+
+<!-- ROW 1: CALENDAR + PLANS -->
 <tr>
 <td width="55%" valign="top">
 
 <hr>
-
 <h3 align="center">🗓️ Календарь</h3>
 
 <table>
@@ -42,85 +44,19 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td></td><td></td><td></td><td></td><td></td><td></td>
-<td align="center"><b>1</b></td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">4</td>
-<td align="center">5</td>
-<td align="center">6</td>
-<td align="center">7</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">9</td>
-<td align="center">10</td>
-<td align="center">11</td>
-<td align="center">12</td>
-<td align="center">13</td>
-<td align="center">14</td>
-<td align="center">15</td>
-</tr>
-<tr>
-<td align="center">16</td>
-<td align="center">17</td>
-<td align="center">18</td>
-<td align="center">19</td>
-<td align="center">20</td>
-<td align="center">21</td>
-<td align="center">22</td>
-</tr>
-<tr>
-<td align="center">23</td>
-<td align="center">24</td>
-<td align="center">25</td>
-<td align="center">26</td>
-<td align="center">27</td>
-<td align="center">28</td>
-<td align="center">29</td>
-</tr>
-<tr>
-<td align="center"><b>30</b></td>
-<td></td><td></td><td></td><td></td><td></td><td></td>
-</tr>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td align="center"><b>1</b></td></tr>
+<tr><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td></tr>
+<tr><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td></tr>
+<tr><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td></tr>
+<tr><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td></tr>
+<tr><td align="center"><b>30</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </tbody>
 </table>
-
-<hr>
-
-<h3 align="center">☕️ Настроение месяца</h3>
-
-- 🍁 **Цвет:** тёплый янтарный
-- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
-- 📚 **Цель:** больше времени для себя
-- ✨ **Девиз:** маленькие шаги — большие перемены
-
-<hr>
-
-<h3>📊 Итоги месяца</h3>
-
-| Показатель | Результат |
-|:---|:---:|
-| ✅ Выполнено задач | 0 |
-| 💡 Новые идеи | 0 |
-| 🚀 Новые проекты | 0 |
-
-<hr>
-
-<h3>💭 Заметки</h3>
-
-- 
-- 
-- 
 
 </td>
 <td width="45%" valign="top">
 
 <hr>
-
 <h3>📝 Мои планы</h3>
 
 - [ ] Новый дизайн для остальных страниц MyRating.
@@ -131,8 +67,25 @@
 
 - [ ] Новый проект VeloPipec — загрузить на codlod.com.
 
-<hr>
+</td>
+</tr>
 
+<!-- ROW 2: MOOD + FOCUS -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
+<h3 align="center">☕️ Настроение месяца</h3>
+
+- 🍁 **Цвет:** тёплый янтарный
+- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
+- 📚 **Цель:** больше времени для себя
+- ✨ **Девиз:** маленькие шаги — большие перемены
+
+</td>
+<td width="45%" valign="top">
+
+<hr>
 <h3 align="center">📌 Фокус месяца</h3>
 
 - 🚀 Развитие собственных проектов.
@@ -140,16 +93,50 @@
 - 🎨 Работа над дизайном и интерфейсами.
 - ⚙️ Улучшение архитектуры проектов.
 
-<hr>
+</td>
+</tr>
 
+<!-- ROW 3: RESULTS + TASKS -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
+<h3>📊 Итоги месяца</h3>
+
+| Показатель | Результат |
+|:---|:---:|
+| ✅ Выполнено задач | 0 |
+| 💡 Новые идеи | 0 |
+| 🚀 Новые проекты | 0 |
+
+</td>
+<td width="45%" valign="top">
+
+<hr>
 <h3>🎯 Текущие задачи</h3>
 
 - [ ] Add news and production on codlod.com.
 
 - [ ] Add new design for main page MyRating.
 
-<hr>
+</td>
+</tr>
 
+<!-- ROW 4: NOTES + IMPORTANT DATES -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
+<h3>💭 Заметки</h3>
+
+- 
+- 
+- 
+
+</td>
+<td width="45%" valign="top">
+
+<hr>
 <h3>🌟 Важные даты</h3>
 
 | Дата | Событие |
@@ -158,8 +145,16 @@
 | — | — |
 | — | — |
 
-<hr>
+</td>
+</tr>
 
+<!-- ROW 5: ACHIEVEMENTS -->
+<tr>
+<td width="55%" valign="top">
+</td>
+<td width="45%" valign="top">
+
+<hr>
 <h3>🏆 Достижения</h3>
 
 - 🌱 Новые начинания.
@@ -168,7 +163,11 @@
 
 </td>
 </tr>
+
+</tbody>
 </table>
+
+---
 
 <p align="center">
   🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
