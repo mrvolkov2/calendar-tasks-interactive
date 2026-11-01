@@ -28,7 +28,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">🗓️ Календарь</h3>
 
 <table>
@@ -56,7 +55,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3>📝 Мои планы</h3>
 
 - [ ] Новый дизайн для остальных страниц MyRating.
@@ -74,7 +72,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">☕️ Настроение месяца</h3>
 
 - 🍁 **Цвет:** тёплый янтарный
@@ -85,7 +82,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">📌 Фокус месяца</h3>
 
 - 🚀 Развитие собственных проектов.
@@ -100,7 +96,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3>📊 Итоги месяца</h3>
 
 | Показатель | Результат |
@@ -112,7 +107,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3>🎯 Текущие задачи</h3>
 
 - [ ] Add news and production on codlod.com.
@@ -126,7 +120,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3>💭 Заметки</h3>
 
 - 
@@ -136,7 +129,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3>🌟 Важные даты</h3>
 
 | Дата | Событие |
@@ -148,13 +140,21 @@
 </td>
 </tr>
 
-<!-- ROW 5: ACHIEVEMENTS -->
+<!-- ROW 5: WELCOME + ACHIEVEMENTS -->
 <tr>
-<td width="55%" valign="top">
+<td width="55%" valign="middle">
+
+<p align="center">
+  🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
+  <br><br>
+  <b>Welcome, November!</b>
+  <br>
+  <i>Make every day count.</i>
+</p>
+
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3>🏆 Достижения</h3>
 
 - 🌱 Новые начинания.
