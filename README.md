@@ -8,15 +8,6 @@
 
 </div>
 
-<div align="center">
-
-### 🔗 Useful Links
-
-[![Open Online Calendar](https://img.shields.io/badge/🗓️_Open_Online_Calendar-6C5CE7?style=for-the-badge&logoColor=white)](https://mrvolkov2.github.io/calendar-tasks-interactive/)
-[![MrVolkov2 GitHub](https://img.shields.io/badge/MrVolkov2-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrvolkov2)
-
-</div>
-
 # 🍁 Ноябрь 2026 🍂
 
 > *«Осень — это время собирать тёплые моменты, даже когда за окном холодно»* ☕️
@@ -28,18 +19,13 @@
 <tr>
 <td width="55%" valign="top">
 
+<hr>
 <h3 align="center">🗓️ Календарь</h3>
 
 <table align="center">
 <thead>
 <tr>
-<th align="center">Пн</th>
-<th align="center">Вт</th>
-<th align="center">Ср</th>
-<th align="center">Чт</th>
-<th align="center">Пт</th>
-<th align="center">Сб</th>
-<th align="center">Вс</th>
+<th align="center">Пн</th><th align="center">Вт</th><th align="center">Ср</th><th align="center">Чт</th><th align="center">Пт</th><th align="center">Сб</th><th align="center">Вс</th>
 </tr>
 </thead>
 <tbody>
@@ -52,6 +38,28 @@
 </tbody>
 </table>
 
+</td>
+<td width="45%" valign="top">
+
+<hr>
+<h3 align="center">📝 Мои планы</h3>
+
+- [ ] Новый дизайн для остальных страниц MyRating.
+
+- [ ] Попробовать 3D motion на странице энциклопедии.
+
+- [ ] Навести порядок в базе данных.
+
+- [ ] Новый проект VeloPipec — загрузить на codlod.com.
+
+</td>
+</tr>
+
+<!-- ROW 2: MOOD + FOCUS -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
 <h3 align="center">☕️ Настроение месяца</h3>
 
 - 🍁 **Цвет:** тёплый янтарный
@@ -59,6 +67,25 @@
 - 📚 **Цель:** больше времени для себя
 - ✨ **Девиз:** маленькие шаги — большие перемены
 
+</td>
+<td width="45%" valign="top">
+
+<hr>
+<h3 align="center">📌 Фокус месяца</h3>
+
+- 🚀 Развитие собственных проектов.
+- 💻 Изучение новых технологий.
+- 🎨 Работа над дизайном и интерфейсами.
+- ⚙️ Улучшение архитектуры проектов.
+
+</td>
+</tr>
+
+<!-- ROW 3: RESULTS + TASKS -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
 <h3 align="center">📊 Итоги месяца</h3>
 
 <table align="center">
@@ -75,6 +102,24 @@
 </tbody>
 </table>
 
+</td>
+<td width="45%" valign="top">
+
+<hr>
+<h3 align="center">🎯 Текущие задачи</h3>
+
+- [ ] Add news and production on codlod.com.
+
+- [ ] Add new design for main page MyRating.
+
+</td>
+</tr>
+
+<!-- ROW 4: NOTES + IMPORTANT DATES -->
+<tr>
+<td width="55%" valign="top">
+
+<hr>
 <h3 align="center">💭 Заметки</h3>
 
 - 
@@ -84,29 +129,7 @@
 </td>
 <td width="45%" valign="top">
 
-<h3 align="center">📝 Мои планы</h3>
-
-- [ ] Новый дизайн для остальных страниц MyRating.
-
-- [ ] Попробовать 3D motion на странице энциклопедии.
-
-- [ ] Навести порядок в базе данных.
-
-- [ ] Новый проект VeloPipec — загрузить на codlod.com.
-
-<h3 align="center">📌 Фокус месяца</h3>
-
-- 🚀 Развитие собственных проектов.
-- 💻 Изучение новых технологий.
-- 🎨 Работа над дизайном и интерфейсами.
-- ⚙️ Улучшение архитектуры проектов.
-
-<h3 align="center">🎯 Текущие задачи</h3>
-
-- [ ] Add news and production on codlod.com.
-
-- [ ] Add new design for main page MyRating.
-
+<hr>
 <h3 align="center">🌟 Важные даты</h3>
 
 <table align="center">
@@ -123,19 +146,14 @@
 </tbody>
 </table>
 
-<h3 align="center">🏆 Достижения</h3>
-
-- 🌱 Новые начинания.
-- 💡 Новые идеи.
-- 🚀 Движение вперёд.
-
 </td>
 </tr>
 
-<!-- ROW 2: WELCOME -->
+<!-- ROW 5: WELCOME + ACHIEVEMENTS -->
 <tr>
 <td width="55%" valign="middle">
 
+<hr>
 <p align="center">
   🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
   <br><br>
@@ -145,7 +163,16 @@
 </p>
 
 </td>
-<td width="45%"></td>
+<td width="45%" valign="top">
+
+<hr>
+<h3 align="center">🏆 Достижения</h3>
+
+- 🌱 Новые начинания.
+- 💡 Новые идеи.
+- 🚀 Движение вперёд.
+
+</td>
 </tr>
 
 </tbody>
