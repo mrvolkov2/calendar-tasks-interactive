@@ -189,17 +189,6 @@
 </tbody>
 </table>
 
-
----
-
-<p align="center">
-  🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
-  <br>
-  <b>Welcome, November!</b>
-  <br>
-  <i>Make every day count.</i>
-</p>
-
 ---
 
 ## 🗓️ Октябрь 2026
