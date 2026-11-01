@@ -19,7 +19,6 @@
 
 <br/>
 
-
 # 🍁 Ноябрь 2026 🍂
 
 > *«Осень — это время собирать тёплые моменты, даже когда за окном холодно»* ☕️
@@ -33,28 +32,99 @@
 <table>
 <thead>
 <tr>
-<th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+<th align="center">Пн</th>
+<th align="center">Вт</th>
+<th align="center">Ср</th>
+<th align="center">Чт</th>
+<th align="center">Пт</th>
+<th align="center">Сб</th>
+<th align="center">Вс</th>
 </tr>
 </thead>
 <tbody>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td align="center">1</td></tr>
-<tr><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td></tr>
-<tr><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td></tr>
-<tr><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td></tr>
-<tr><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td></tr>
-<tr><td align="center">30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td></td><td></td><td></td><td></td><td></td><td></td>
+<td align="center"><b>1</b></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">3</td>
+<td align="center">4</td>
+<td align="center">5</td>
+<td align="center">6</td>
+<td align="center">7</td>
+<td align="center">8</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center">10</td>
+<td align="center">11</td>
+<td align="center">12</td>
+<td align="center">13</td>
+<td align="center">14</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="center">16</td>
+<td align="center">17</td>
+<td align="center">18</td>
+<td align="center">19</td>
+<td align="center">20</td>
+<td align="center">21</td>
+<td align="center">22</td>
+</tr>
+<tr>
+<td align="center">23</td>
+<td align="center">24</td>
+<td align="center">25</td>
+<td align="center">26</td>
+<td align="center">27</td>
+<td align="center">28</td>
+<td align="center">29</td>
+</tr>
+<tr>
+<td align="center"><b>30</b></td>
+<td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
 </tbody>
 </table>
+
+<hr>
+
+<h2 align="center">📌 Фокус месяца</h2>
+
+- 🚀 Развитие собственных проектов.
+- 💻 Изучение новых технологий.
+- 🎨 Работа над дизайном и интерфейсами.
+- ⚙️ Улучшение архитектуры проектов.
+
+<hr>
+
+<h2>📊 Итоги месяца</h2>
+
+| Показатель | Результат |
+|:---|:---:|
+| ✅ Выполнено задач | 0 |
+| 💡 Новые идеи | 0 |
+| 🚀 Новые проекты | 0 |
+
+<hr>
+
+<h2>💭 Заметки</h2>
+
+- 
+- 
+- 
 
 </td>
 <td width="45%" valign="top">
 
-<h2>☕️ Настроение месяца</h2>
+<h2 align="center">☕️ Настроение месяца</h2>
 
-- 🍁 <b>Цвет:</b> тёплый янтарный
-- 🧣 <b>Атмосфера:</b> пледы, дождь и уютные вечера
-- 📚 <b>Цель:</b> больше времени для себя
-- ✨ <b>Девиз:</b> маленькие шаги — большие перемены
+- 🍁 **Цвет:** тёплый янтарный
+- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
+- 📚 **Цель:** больше времени для себя
+- ✨ **Девиз:** маленькие шаги — большие перемены
 
 <hr>
 
@@ -82,18 +152,27 @@
 | — | — |
 | — | — |
 
+<hr>
+
+<h2>🏆 Достижения</h2>
+
+- 🌱 Новые начинания.
+- 💡 Новые идеи.
+- 🚀 Движение вперёд.
+
 </td>
 </tr>
 </table>
 
-<hr>
+---
 
 <p align="center">
-🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
-<br>
-<i>Welcome, November!</i>
+  🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
+  <br>
+  <b>Welcome, November!</b>
+  <br>
+  <i>Make every day count.</i>
 </p>
-
 
 ---
 
