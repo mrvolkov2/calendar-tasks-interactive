@@ -8,6 +8,7 @@
 
 </div>
 
+
 # 🍁 Ноябрь 2026 🍂
 
 > *«Осень — это время собирать тёплые моменты, даже когда за окном холодно»* ☕️
@@ -17,7 +18,7 @@
 
 <!-- ROW 1: CALENDAR + PLANS -->
 <tr>
-<td width="55%" valign="top" style="padding-bottom: 20px;">
+<td width="55%" valign="top">
 
 <h3 align="center">🗓️ Календарь</h3>
 
@@ -37,6 +38,9 @@
 </tbody>
 </table>
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 </td>
 <td width="45%" valign="top">
 
@@ -49,6 +53,9 @@
 - [ ] Навести порядок в базе данных.
 
 - [ ] Новый проект VeloPipec — загрузить на codlod.com.
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 </td>
 </tr>
@@ -64,6 +71,9 @@
 - 📚 **Цель:** больше времени для себя
 - ✨ **Девиз:** маленькие шаги — большие перемены
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 </td>
 <td width="45%" valign="top">
 
@@ -73,6 +83,9 @@
 - 💻 Изучение новых технологий.
 - 🎨 Работа над дизайном и интерфейсами.
 - ⚙️ Улучшение архитектуры проектов.
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 </td>
 </tr>
@@ -97,6 +110,9 @@
 </tbody>
 </table>
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 </td>
 <td width="45%" valign="top">
 
@@ -105,6 +121,9 @@
 - [ ] Add news and production on codlod.com.
 
 - [ ] Add new design for main page MyRating.
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 </td>
 </tr>
@@ -118,6 +137,9 @@
 - 
 - 
 - 
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -138,6 +160,9 @@
 </tbody>
 </table>
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 </td>
 </tr>
 
@@ -146,12 +171,15 @@
 <td width="55%" valign="middle">
 
 <p align="center">
-  🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
-  <br>
-  <b>Welcome, November!</b>
-  <br>
-  <i>Make every day count.</i>
+🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
+<br>
+<b>Welcome, November!</b>
+<br>
+<i>Make every day count.</i>
 </p>
+
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 
 </td>
 <td width="45%" valign="top">
@@ -162,11 +190,15 @@
 - 💡 Новые идеи.
 - 🚀 Движение вперёд.
 
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+
 </td>
 </tr>
 
 </tbody>
 </table>
+
 
 ---
 
