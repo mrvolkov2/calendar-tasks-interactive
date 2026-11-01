@@ -19,7 +19,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">🗓️ Календарь</h3>
 
 <table align="center">
