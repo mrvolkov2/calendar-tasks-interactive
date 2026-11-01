@@ -30,7 +30,7 @@
 
 <h3 align="center">🗓️ Календарь</h3>
 
-<table>
+<table align="center">
 <thead>
 <tr>
 <th align="center">Пн</th>
@@ -43,19 +43,48 @@
 </tr>
 </thead>
 <tbody>
-<tr><td></td><td></td><td></td><td></td><td></td><td></td><td align="center"><b>1</b></td></tr>
+<tr><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"><b>1</b></td></tr>
 <tr><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td></tr>
 <tr><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td></tr>
 <tr><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td></tr>
 <tr><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td></tr>
-<tr><td align="center"><b>30</b></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td align="center"><b>30</b></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td><td align="center"></td></tr>
 </tbody>
 </table>
+
+<h3 align="center">☕️ Настроение месяца</h3>
+
+- 🍁 **Цвет:** тёплый янтарный
+- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
+- 📚 **Цель:** больше времени для себя
+- ✨ **Девиз:** маленькие шаги — большие перемены
+
+<h3 align="center">📊 Итоги месяца</h3>
+
+<table align="center">
+<thead>
+<tr>
+<th align="center">Показатель</th>
+<th align="center">Результат</th>
+</tr>
+</thead>
+<tbody>
+<tr><td align="center">✅ Выполнено задач</td><td align="center">0</td></tr>
+<tr><td align="center">💡 Новые идеи</td><td align="center">0</td></tr>
+<tr><td align="center">🚀 Новые проекты</td><td align="center">0</td></tr>
+</tbody>
+</table>
+
+<h3 align="center">💭 Заметки</h3>
+
+- 
+- 
+- 
 
 </td>
 <td width="45%" valign="top">
 
-<h3>📝 Мои планы</h3>
+<h3 align="center">📝 Мои планы</h3>
 
 - [ ] Новый дизайн для остальных страниц MyRating.
 
@@ -65,23 +94,6 @@
 
 - [ ] Новый проект VeloPipec — загрузить на codlod.com.
 
-</td>
-</tr>
-
-<!-- ROW 2: MOOD + FOCUS -->
-<tr>
-<td width="55%" valign="top">
-
-<h3 align="center">☕️ Настроение месяца</h3>
-
-- 🍁 **Цвет:** тёплый янтарный
-- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
-- 📚 **Цель:** больше времени для себя
-- ✨ **Девиз:** маленькие шаги — большие перемены
-
-</td>
-<td width="45%" valign="top">
-
 <h3 align="center">📌 Фокус месяца</h3>
 
 - 🚀 Развитие собственных проектов.
@@ -89,58 +101,38 @@
 - 🎨 Работа над дизайном и интерфейсами.
 - ⚙️ Улучшение архитектуры проектов.
 
-</td>
-</tr>
-
-<!-- ROW 3: RESULTS + TASKS -->
-<tr>
-<td width="55%" valign="top">
-
-<h3>📊 Итоги месяца</h3>
-
-| Показатель | Результат |
-|:---|:---:|
-| ✅ Выполнено задач | 0 |
-| 💡 Новые идеи | 0 |
-| 🚀 Новые проекты | 0 |
-
-</td>
-<td width="45%" valign="top">
-
-<h3>🎯 Текущие задачи</h3>
+<h3 align="center">🎯 Текущие задачи</h3>
 
 - [ ] Add news and production on codlod.com.
 
 - [ ] Add new design for main page MyRating.
 
-</td>
-</tr>
+<h3 align="center">🌟 Важные даты</h3>
 
-<!-- ROW 4: NOTES + IMPORTANT DATES -->
+<table align="center">
+<thead>
 <tr>
-<td width="55%" valign="top">
+<th align="center">Дата</th>
+<th align="center">Событие</th>
+</tr>
+</thead>
+<tbody>
+<tr><td align="center">—</td><td align="center">—</td></tr>
+<tr><td align="center">—</td><td align="center">—</td></tr>
+<tr><td align="center">—</td><td align="center">—</td></tr>
+</tbody>
+</table>
 
-<h3>💭 Заметки</h3>
+<h3 align="center">🏆 Достижения</h3>
 
-- 
-- 
-- 
-
-</td>
-<td width="45%" valign="top">
-
-<h3>🌟 Важные даты</h3>
-
-| Дата | Событие |
-|:---:|:---|
-| — | — |
-| — | — |
-| — | — |
+- 🌱 Новые начинания.
+- 💡 Новые идеи.
+- 🚀 Движение вперёд.
 
 </td>
 </tr>
 
-<!-- ROW 5: WELCOME + ACHIEVEMENTS -->
+<!-- ROW 2: WELCOME -->
 <tr>
 <td width="55%" valign="middle">
 
@@ -153,15 +145,7 @@
 </p>
 
 </td>
-<td width="45%" valign="top">
-
-<h3>🏆 Достижения</h3>
-
-- 🌱 Новые начинания.
-- 💡 Новые идеи.
-- 🚀 Движение вперёд.
-
-</td>
+<td width="45%"></td>
 </tr>
 
 </tbody>
