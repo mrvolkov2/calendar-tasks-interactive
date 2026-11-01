@@ -41,7 +41,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">📝 Мои планы</h3>
 
 - [ ] Новый дизайн для остальных страниц MyRating.
@@ -59,7 +58,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">☕️ Настроение месяца</h3>
 
 - 🍁 **Цвет:** тёплый янтарный
@@ -70,7 +68,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">📌 Фокус месяца</h3>
 
 - 🚀 Развитие собственных проектов.
@@ -85,7 +82,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">📊 Итоги месяца</h3>
 
 <table align="center">
@@ -105,7 +101,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">🎯 Текущие задачи</h3>
 
 - [ ] Add news and production on codlod.com.
@@ -119,7 +114,6 @@
 <tr>
 <td width="55%" valign="top">
 
-<hr>
 <h3 align="center">💭 Заметки</h3>
 
 - 
@@ -129,7 +123,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">🌟 Важные даты</h3>
 
 <table align="center">
@@ -153,7 +146,6 @@
 <tr>
 <td width="55%" valign="middle">
 
-<hr>
 <p align="center">
   🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
   <br><br>
@@ -165,7 +157,6 @@
 </td>
 <td width="45%" valign="top">
 
-<hr>
 <h3 align="center">🏆 Достижения</h3>
 
 - 🌱 Новые начинания.
