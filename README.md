@@ -19,49 +19,81 @@
 
 <br/>
 
+
 # 🍁 Ноябрь 2026 🍂
 
 > *«Осень — это время собирать тёплые моменты, даже когда за окном холодно»* ☕️
 
-| Пн | Вт | Ср | Чт | Пт | Сб | Вс |
-|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 🟠 | 🟠 | 🟠 | 🟠 | 🟠 | 🟠 | **1** |
-| **2** | **3** | **4** | **5** | **6** | **7** | **8** |
-| **9** | **10** | **11** | **12** | **13** | **14** | **15** |
-| **16** | **17** | **18** | **19** | **20** | **21** | **22** |
-| **23** | **24** | **25** | **26** | **27** | **28** | **29** |
-| **30** | 🍂 | 🍂 | 🍂 | 🍂 | 🍂 | 🍂 |
+<table>
+<tr>
+<td width="55%" valign="top">
 
-### ☕️ Настроение месяца
+<h2 align="center">🗓️ Календарь</h2>
 
-- 🍁 **Цвет месяца:** тёплый янтарный
-- 🧣 **Атмосфера:** пледы, дождь и уютные вечера
-- 📚 **Цель:** больше времени для себя
-- ✨ **Девиз:** маленькие шаги — большие перемены
+<table>
+<thead>
+<tr>
+<th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+</tr>
+</thead>
+<tbody>
+<tr><td></td><td></td><td></td><td></td><td></td><td></td><td align="center">1</td></tr>
+<tr><td align="center">2</td><td align="center">3</td><td align="center">4</td><td align="center">5</td><td align="center">6</td><td align="center">7</td><td align="center">8</td></tr>
+<tr><td align="center">9</td><td align="center">10</td><td align="center">11</td><td align="center">12</td><td align="center">13</td><td align="center">14</td><td align="center">15</td></tr>
+<tr><td align="center">16</td><td align="center">17</td><td align="center">18</td><td align="center">19</td><td align="center">20</td><td align="center">21</td><td align="center">22</td></tr>
+<tr><td align="center">23</td><td align="center">24</td><td align="center">25</td><td align="center">26</td><td align="center">27</td><td align="center">28</td><td align="center">29</td></tr>
+<tr><td align="center">30</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody>
+</table>
 
-🎯 Created design VeloPipec. Plans - add news and produstion on codlod.com.
-🎯 Add new design for main page MyRating.
+</td>
+<td width="45%" valign="top">
 
-### 📝 Мои планы на ноябрь
+<h2>☕️ Настроение месяца</h2>
 
-- [ ] Новый дизайн для остальных страниц MyRating).
+- 🍁 <b>Цвет:</b> тёплый янтарный
+- 🧣 <b>Атмосфера:</b> пледы, дождь и уютные вечера
+- 📚 <b>Цель:</b> больше времени для себя
+- ✨ <b>Девиз:</b> маленькие шаги — большие перемены
+
+<hr>
+
+<h2>📝 Мои планы</h2>
+
+- [ ] Новый дизайн для остальных страниц MyRating.
 - [ ] Попробовать 3D motion на странице энциклопедии.
 - [ ] Навести порядок в базе данных.
-- [ ] Новый проект - VeloPipec - загрузить на codlod.com.
+- [ ] Новый проект VeloPipec — загрузить на codlod.com.
 
-### 🌟 Важные даты
+<hr>
+
+<h2>🎯 Текущие задачи</h2>
+
+- [ ] Add news and production on codlod.com.
+- [ ] Add new design for main page MyRating.
+
+<hr>
+
+<h2>🌟 Важные даты</h2>
 
 | Дата | Событие |
 |:---:|:---|
-|  |  |
-|  |  |
-|  |  |
+| — | — |
+| — | — |
+| — | — |
+
+</td>
+</tr>
+</table>
+
+<hr>
 
 <p align="center">
-  🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
-  <br>
-  <i>Welcome, November!</i>
+🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
+<br>
+<i>Welcome, November!</i>
 </p>
+
 
 ---
 
