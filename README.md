@@ -147,7 +147,7 @@
 
 <p align="center">
   🍂 🧡 🍁 ☕️ 🍁 🧡 🍂
-  <br><br>
+  <br>
   <b>Welcome, November!</b>
   <br>
   <i>Make every day count.</i>
@@ -157,7 +157,6 @@
 <td width="45%" valign="top">
 
 <h3 align="center">🏆 Достижения</h3>
-
 - 🌱 Новые начинания.
 - 💡 Новые идеи.
 - 🚀 Движение вперёд.
